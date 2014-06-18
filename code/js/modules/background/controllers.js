@@ -5,7 +5,7 @@ define(['angular'],
   return angular.module('bgApp.controllers', [])
 
     // welcome controller
-    .controller('WelcomeControler', ['$scope', '$location',
+    .controller('WelcomeController', ['$scope', '$location',
       function($scope, $location) {
         require(['background/controllers/welcomectrl'], function(welcomectrl) {
         angular.injector(['ng']).invoke(welcomectrl, this,
@@ -13,7 +13,7 @@ define(['angular'],
       });
     }])
     // options controller
-    .controller('OptionsControler', ['$scope', '$location',
+    .controller('OptionsController', ['$scope', '$location',
       function($scope, $location) {
         require(['background/controllers/optionsctrl'], function(optionsctrl) {
         angular.injector(['ng']).invoke(optionsctrl, this,
@@ -21,7 +21,7 @@ define(['angular'],
       });
     }])
     // popup controller
-    .controller('PopupControler', ['$scope', '$location',
+    .controller('PopupController', ['$scope', '$location',
       function($scope, $location) {
         require(['background/controllers/popupctrl'], function(popupctrl) {
         angular.injector(['ng']).invoke(popupctrl, this,

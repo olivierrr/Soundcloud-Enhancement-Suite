@@ -7,17 +7,22 @@ define(['util/messagingClient', 'angular', 'background/app', 'logging', 'configS
   return app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when(sc.routes.welcome, {
       templateUrl: chrome.extension.getURL('/html/templates/welcome.html'),
-      controller: 'WelcomeControler'
+      controller: 'WelcomeController'
     });
 
     $routeProvider.when(sc.routes.options, {
       templateUrl: chrome.extension.getURL('/html/templates/options.html'),
-      controller: 'OptionsControler'
+      controller: 'OptionsController'
+    });
+
+    $routeProvider.when(sc.routes.setup, {
+      templateUrl: chrome.extension.getURL('/html/templates/setup.html'),
+      controller: 'WelcomeController'
     });
 
     $routeProvider.when(sc.routes.popup, {
       templateUrl: chrome.extension.getURL('/html/templates/popup.html'),
-      controller: 'PopupControler'
+      controller: 'PopupController'
     });
 
     $routeProvider.otherwise({redirectTo: sc.routes.login});

@@ -61,9 +61,7 @@ function(   $,
       contentDiv.addClass('ng-app');
 
       contentDiv.addClass('ng-csp');
-
-      console.log($('.soundList__item'));
-      console.log($('.header__iconMenu'));
+      console.log("herro");
     });
   });
 

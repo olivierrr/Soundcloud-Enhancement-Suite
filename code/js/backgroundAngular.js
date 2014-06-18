@@ -26,7 +26,7 @@ function( $,
   
   $(document).ready(function () {
     var $html = $('html');
-    // Because of RequireJS we need to bootstrap the app app manually
+    // Because of RequireJS we need to bootstrap the app manually
     // and Angular Scenario runner won't be able to communicate with our app
     // unless we explicitely mark the container as app holder
     // More info: https://groups.google.com/forum/#!msg/angular/yslVnZh9Yjk/MLi3VGXZLeMJ

@@ -22,6 +22,10 @@ define({
   routes: {
     options: '/options',
     welcome: '/welcome',
+
+    auth: '/auth/soundcloud',
+    auth_callback: '/auth/soundcloud/callback',
+    
     popup: '/popup'
   }
 });
