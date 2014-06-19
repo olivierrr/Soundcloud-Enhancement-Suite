@@ -37,6 +37,8 @@ define(['util/template',
       return true;
     },
 
+    handleSyncFollowing: function()
+
     handleLogFromContent: function(args, sender, sendResponse) {
       log.LogFromContent(args.msg);
       sendResponse({});
