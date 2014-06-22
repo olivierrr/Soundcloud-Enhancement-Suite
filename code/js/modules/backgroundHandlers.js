@@ -1,10 +1,12 @@
 define(['util/template',
         'configSerializer',
-        'logging'
+        'logging',
+        'backgroundSoundcloud'
        ],
   function( template,
             configSerializer,
-            logging
+            logging,
+            Soundcloud
           ) {
 
 
@@ -37,7 +39,15 @@ define(['util/template',
       return true;
     },
 
-    handleSyncFollowing: function()
+    handleCacheSoundcloudData: function(args, sender, sendResponse) {
+      Soundcloud.cache(args, function(data) {
+        sendResponse(data);
+        log.LogFromContent(data);
+      });
+    },
+    handleLoadSoundcloudData: function(args, sender, sendResponse) {
+
+    },
 
     handleLogFromContent: function(args, sender, sendResponse) {
       log.LogFromContent(args.msg);

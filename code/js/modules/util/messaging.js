@@ -31,13 +31,13 @@ function(_,            backgroundHandlers,   contentHandlers) {
     }
 
     return handler(request.args, sender, sendResponse);
-  };
+  }
 
   // Creating dispatcher wrapper
   function makeDispatcher(handlers) {
     function wrapper(request, sender, sendResponse) {
       return dispatcher(handlers, request, sender, sendResponse);
-    };
+    }
     return wrapper;
   }
 

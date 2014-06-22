@@ -29,6 +29,7 @@ function(   $,
   log.debug('content started');
   'use strict';
   // load injected html template from extension's resources
+  $('.stream__list').remove();
   client.sendBroadcast({
     cmd: 'LoadHtml',
     args: {
@@ -61,7 +62,6 @@ function(   $,
       contentDiv.addClass('ng-app');
 
       contentDiv.addClass('ng-csp');
-      console.log("herro");
     });
   });
 

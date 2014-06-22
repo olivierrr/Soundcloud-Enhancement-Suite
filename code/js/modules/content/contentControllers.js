@@ -1,61 +1,56 @@
-define(['angular', 'content/contentServices'],
-  function (angular) {
-  'use strict';
+define(['angular', 'util/messaging', 'util/messagingClient', 'content/contentServices'],
+  function(angular, messaging, client, services) {
+    'use strict';
 
-
-  return angular.module('contentApp.controllers', ['contentApp.services'])
+    return angular.module('contentApp.controllers', ['contentApp.services'])
 
     // content controller
-    /*.controller('ContentController', ['$scope', '$location',
-      function($scope, $location) {
-        require(['content/controllers/contentctrl'], function(contentctrl) {
-        angular.injector(['ng']).invoke(contentctrl, this,
-          {'$scope': $scope, '$location': $location});
-      });
-    }]);*/
-
-    .controller('StreamController', ['$scope', '$location', 'Soundcloud', 'Groups', function($scope, $location, Soundcloud, Groups) {
-      var full_tracks = [];
-      var total = 3417;
-      var _offset = 0;
-      var limit_size = 50;
-      var i;
-      /*var success = function(tracks) {
-            full_tracks.push(tracks);
-            console.log("TRACKS: ");
-            console.log(tracks);
-            console.log("Full: ");
-            console.log(full_tracks);
-        };*/
-
-
-        /*Soundcloud.get('/me/followings', {}, function(tracks) {
-          console.log(tracks);
+    .controller('StreamController', ['$scope', '$rootScope', '$location', 'Soundcloud', 'Groups',
+      function($scope, $rootScope, $location, Soundcloud, Groups) {
+        /*require(['content/controllers/streamController'], function(StreamController) {
+          angular.injector(['ng']).invoke(StreamController, this,
+            {'$scope': $scope, '$location': $location});
         });*/
+        $scope.tracks = [];
 
-        /*var fav = function() { Soundcloud.get('/users/515070/favorites', {offset: _offset}, function(tracks) {
-            console.log(_offset);
-            full_tracks.push(tracks);
-            _offset += 50;
-
-            if (_offset < total) {
-              console.log("recursive");
-              fav();
-            }
-            else {
-
-            }
+        var getStream = function(group) {
+          Soundcloud.buildStream(group, function(tracks) {
+            /* To-do: Only bind needed track properties to $scope */
+            $scope.tracks = $scope.tracks.concat(tracks);
           });
         };
 
-        fav();*/
+        /* Watch Groups.currentGroup() for changes? */
+        $scope.$on('groupChanged', function(event, group) {
+          $scope.tracks = [];
+          getStream(group);
+        });
+      }
+    ])
+      .controller('GroupController', ['$scope', '$rootScope', '$location', 'Soundcloud', 'Groups',
+        function($scope, $rootScope, $location, Soundcloud, Groups) {
+          $scope.groups = Groups.all();
+          $scope.current_group = [];
 
-      /*chrome.storage.sync.get("groups", function(obj) {
-        $scope.$apply(function() {
-          $scope.groups = obj.groups;
-        })
-      });*/
+          $scope.setGroup = function(group) {
+            $scope.current_group = group;
+            $rootScope.$broadcast('groupChanged', group);
+          };
+        }
+      ])
+      .controller('FavoritesController', ['$scope', '$location',
+        function($scope, $location) {
 
-    }]);
+        }
+      ])
+      .controller('FollowingController', ['$scope', '$location',
+        function($scope, $location) {
 
-});
+        }
+      ])
+      .controller('ProfileController', ['$scope', '$location',
+        function($scope, $location) {
+
+        }
+      ]);
+  });

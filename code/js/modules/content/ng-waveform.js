@@ -25,26 +25,18 @@ define(['angular'], function (angular) {
 
           attrs.$observe('src', function(value) {
             if (value) {
-              console.log("VALUE: " + value);
               $http({method: 'GET',
                 url: 'https://www.waveformjs.org/w',
                 params: {url: value}
               })
               .success(function(_data) {
-                _data[30] = 0.2;
-                _data[52] = 0.2;
-                _data[74] = 0.2;
-                _data[86] = 0.2;
-                _data[108] = 0.2;
-
-
-                waveform.update({data: _data})
+                waveform.update({data: _data});
               });
             }
 
           });
 
         }
-      }
+      };
     });
 });

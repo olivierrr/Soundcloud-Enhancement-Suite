@@ -5,10 +5,10 @@ define(['angular'],
   return angular.module('bgApp.controllers', [])
 
     // welcome controller
-    .controller('WelcomeController', ['$scope', '$location',
+    .controller('AuthController', ['$scope', '$location',
       function($scope, $location) {
-        require(['background/controllers/welcomectrl'], function(welcomectrl) {
-        angular.injector(['ng']).invoke(welcomectrl, this,
+        require(['background/controllers/authController'], function(AuthController) {
+        angular.injector(['ng']).invoke(AuthController, this,
           {'$scope': $scope, '$location': $location});
       });
     }])
@@ -19,14 +19,5 @@ define(['angular'],
         angular.injector(['ng']).invoke(optionsctrl, this,
           {'$scope': $scope, '$location': $location});
       });
-    }])
-    // popup controller
-    .controller('PopupController', ['$scope', '$location',
-      function($scope, $location) {
-        require(['background/controllers/popupctrl'], function(popupctrl) {
-        angular.injector(['ng']).invoke(popupctrl, this,
-          {'$scope': $scope, '$location': $location});
-      });
     }]);
-
 });

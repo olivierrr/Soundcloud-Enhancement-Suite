@@ -4,10 +4,10 @@ define(['util/messagingClient', 'angular', 'background/app', 'logging', 'configS
   'use strict';
   var log = new logging(true, 'routes', client);
 
-  return app.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when(sc.routes.welcome, {
-      templateUrl: chrome.extension.getURL('/html/templates/welcome.html'),
-      controller: 'WelcomeController'
+  return app.config(['$routeProvider', '$locationProvider', function($routeProvider) {
+    $routeProvider.when(sc.routes.auth, {
+      templateUrl: chrome.extension.getURL('/html/templates/auth.html'),
+      controller: 'AuthController'
     });
 
     $routeProvider.when(sc.routes.options, {
@@ -15,10 +15,10 @@ define(['util/messagingClient', 'angular', 'background/app', 'logging', 'configS
       controller: 'OptionsController'
     });
 
-    $routeProvider.when(sc.routes.setup, {
+    /*$routeProvider.when(sc.routes.setup, {
       templateUrl: chrome.extension.getURL('/html/templates/setup.html'),
-      controller: 'WelcomeController'
-    });
+      controller: 'SetupController'
+    });*/
 
     $routeProvider.when(sc.routes.popup, {
       templateUrl: chrome.extension.getURL('/html/templates/popup.html'),

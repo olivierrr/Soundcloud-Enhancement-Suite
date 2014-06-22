@@ -17,12 +17,14 @@
   "options_page": "html/application.html#/options",
   "permissions": [
     "storage",
+    "identity",
     "webRequest",
     "webRequestBlocking",
     "tabs",
     "https://api.soundcloud.com/",
     "https://www.waveformjs.org/",
-    "https://*.sndcdn.com/"
+    "https://*.sndcdn.com/",
+    "https://www.soundcloud.com/*"
   ],
   "web_accessible_resources": [
     "js/*",

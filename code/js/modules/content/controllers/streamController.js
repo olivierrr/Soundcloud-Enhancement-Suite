@@ -1,15 +1,12 @@
 //
-// Controller for content script
+// Controller for stream
 //
 
 define(['util/messagingClient', 'logging'],
   function(client, logging, services) {
-    var log = new logging(true, 'contentctrl', client);
-    return ['$scope', '$location', '$http', function($scope, $location, $http) {
-      log.debug('Content ctrl started')
-
-      // define some variable for check if angular works ok
-      $scope.content_script = 'Content Script';
+    var log = new logging(true, 'StreamController', client);
+    return ['$scope', '$location', '$http', 'Soundcloud', 'Groups', function($scope, $location, $http, Soundcloud, Groups) {
+      log.debug('Stream controller started')
 
       Soundcloud.get('/tracks/', {'limit': 5}, function(tracks) {
         $scope.tracks = tracks;

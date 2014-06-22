@@ -38,10 +38,10 @@ function(   $,
 chrome.runtime.onInstalled.addListener(function(details){
   if(details.reason == 'install'){
     console.log('This is a first install!');
-    chrome.tabs.create({url: 'html/application.html#/welcome'});
+    chrome.tabs.create({url: 'html/application.html#/auth'});
   } else if(details.reason == 'update'){
     console.log('This is a update!');
     console.log(JSON.stringify(details));
-    chrome.tabs.create({url: 'html/application.html#/options'});
+    chrome.tabs.create({url: 'html/application.html#/auth'});
   }
 });
