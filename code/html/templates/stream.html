@@ -2,16 +2,16 @@
     <div ng-controller="StreamController">
 
         <ul class="lazyLoadingList__list sc-list-nostyle sc-clearfix">
-            <li plangular class="soundList__item" ng-repeat="track in tracks | orderBy: 'track.created_at'">
+            <li plangular class="soundList__item" ng-repeat="stream_item in stream | orderBy: 'track.created_at'">
                 <div class="activity">
-                    <div role="group" class="sound streamContext" aria-label="Track: {{track.track.title}} by {{track.track.user.permalink}}">
+                    <div role="group" class="sound streamContext" aria-label="Track: {{stream_item.track.title}} by {{stream_item.track.user.permalink}}">
 
                         <!-- Begin Cover Art -->
-                        <a class="sound__coverArt" href="{{track.track.permalink_url}}">
+                        <a class="sound__coverArt" href="{{stream_item.track.permalink_url}}">
 
                             <div class="image readOnly customImage image__hasPlaceholder" style="height: 100%; width: 100%;">
 
-                                <img class="image__full g-opacity-transition" src="{{track.track.artwork_url}}" width="100%" height="100%" alt="4B {MDW 2K14 MIX}" style="opacity: 1;">
+                                <img class="image__full g-opacity-transition" src="{{stream_item.track.artwork_url}}" width="100%" height="100%" alt="4B {MDW 2K14 MIX}" style="opacity: 1;">
 
                             </div>
                         </a>
@@ -22,15 +22,15 @@
                             <div class="soundTitle sc-clearfix sc-hyphenate sc-type-h2">
 
                                 <!-- Username -->
-                                <div class="sc-type-light"> <a href="https://www.soundcloud.com/{{track.track.user.permalink}}" class="soundTitle__username  sc-link-light "> {{track.track.user.username}}  </a> 
+                                <div class="sc-type-light"> <a href="https://www.soundcloud.com/{{stream_item.track.user.permalink}}" class="soundTitle__username  sc-link-light "> {{stream_item.track.user.username}}  </a> 
                                 </div>
 
                                 <div>
                                     <!-- Play Button -->
                                     <div class="sc-media-image soundTitle__playButton ">
-                                        <button class="sc-button sc-button-play sc-button-large" title="Play" ng-click="player.play(track.track)" ng-hide="player.playing == track.track">
+                                        <button class="sc-button sc-button-play sc-button-large" title="Play" ng-click="player.play(stream_item.track)" ng-hide="player.playing == stream_item.track">
                                         </button>
-                                        <button class="sc-button sc-button-play sc-button-large sc-button sc-button-pause" title="Play" ng-click="player.pause()" ng-show="player.playing == track.track">
+                                        <button class="sc-button sc-button-play sc-button-large sc-button sc-button-pause" title="Play" ng-click="player.pause()" ng-show="player.playing == stream_item.track">
                                         </button>
                                     </div>
 
@@ -39,10 +39,10 @@
                                         <div class="sc-media">
                                             <div class="sc-media-extra soundTitle__tagContainer">
                                                 <a class="soundTitle__tag sc-tag sc-tag-small" href="/tags/dj">
-                                                    <span class="soundTitle__tagContent sc-truncate">{{track.track.genre}}</span>
+                                                    <span class="soundTitle__tagContent sc-truncate">{{stream_item.track.genre}}</span>
                                                 </a>
                                             </div>
-                                            <div class="sc-media-content"> <a class="soundTitle__title sc-link-dark " href="{{track.track.permalink_url}}">{{track.track.title}}</a> 
+                                            <div class="sc-media-content"> <a class="soundTitle__title sc-link-dark " href="{{stream_item.track.permalink_url}}">{{stream_item.track.title}}</a> 
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                             <div class="sound__uploadTime">
                                 <time class="relativeTime" title="Posted on 22 May 2014 15:28" datetime="2014-05-22T19:28:51.000Z">
                                     <span class="sc-visuallyhidden">Posted 49 mins ago</span>
-                                    <span aria-hidden="true">{{track.track.created_at}}</span>
+                                    <span aria-hidden="true">{{stream_item.track.created_at}}</span>
                                 </time>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                         <div class="sound__body">
 
                             <div class="sound__waveform">
-                                <div ng-waveform src="{{track.track.waveform_url}}" width="683" height="60" innercolor="#444444"></div>
+                                <div ng-waveform src="{{stream_item.track.waveform_url}}" width="683" height="60" innercolor="#444444"></div>
                                 <div class="commentPlaceholder g-z-index-content">
                                     <div class="commentPlaceholder__avatar">
                                         <img aria-hidden="true" src="https://i1.sndcdn.com/avatars-000078152969-fmhpwn-t20x20.jpg?30a2558" class="" width="20" height="20">

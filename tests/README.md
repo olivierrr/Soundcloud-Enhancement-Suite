@@ -1,7 +1,7 @@
 Here test folder.
 
 *    config - config for karma
-*    e2e - end-toend test (not work)
+*    e2e - end-to-end test (not work)
 *    lib - lib for common e2e and unit
 *    pure-unit - original test for mocha
 *    unit - unit test with karma (not work)

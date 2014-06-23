@@ -46,7 +46,7 @@ function(   $,
   client.sendBroadcast({
     cmd: 'LoadHtml',
     args: {
-      template: 'filters',
+      template: 'groups',
       data: {}
     }
   }, function(response) {

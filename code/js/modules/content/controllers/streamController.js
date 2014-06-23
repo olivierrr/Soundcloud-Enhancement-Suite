@@ -1,20 +1,25 @@
-//
-// Controller for stream
-//
+/**
+ * Controller for the stream view
+ */
 
 define(['util/messagingClient', 'logging'],
-  function(client, logging, services) {
+  function(client, logging) {
     var log = new logging(true, 'StreamController', client);
-    return ['$scope', '$location', '$http', 'Soundcloud', 'Groups', function($scope, $location, $http, Soundcloud, Groups) {
-      log.debug('Stream controller started')
+    return ['$scope', '$location', 'streamService', 'Groups', function($scope, $location, streamService, Groups) {
+      log.debug('Stream controller started');
 
-      Soundcloud.get('/tracks/', {'limit': 5}, function(tracks) {
-        $scope.tracks = tracks;
-      })
 
-      // because this has happened asynchronously we've missed
-      // Angular's initial call to $apply after the controller has been loaded
-      // hence we need to explicitly call it at the end of our Controller constructor
+      var getStream = function getStream(stream) {
+        $scope.stream = stream;
+        console.log(stream);
+        console.log($scope.stream);
+      };
+
+      // listen for group change and get the new stream
+      $scope.$on('activeGroupChanged', function (event, group) {
+        streamService.buildStream(group, getStream);
+      });
+
       $scope.$apply();
     }];
-});
+  });

@@ -1,7 +1,7 @@
 <div class="span4" id="contentDiv">
   <div ng-controller="GroupController">
   <ul>
-	<li  ng-repeat="group in groups"><a href ng-click="setGroup(group)">{{group.name}}</a></li>
+	<li  ng-repeat="group in groups"><a href ng-click="setActiveGroup(group)">{{group.name}}</a></li>
   </ul>
 	<h1>Hello from angular {{content_script}}<h1>
   </div>

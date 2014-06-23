@@ -5,37 +5,28 @@ define(['angular', 'util/messaging', 'util/messagingClient', 'content/contentSer
     return angular.module('contentApp.controllers', ['contentApp.services'])
 
     // content controller
-    .controller('StreamController', ['$scope', '$rootScope', '$location', 'Soundcloud', 'Groups',
-      function($scope, $rootScope, $location, Soundcloud, Groups) {
-        /*require(['content/controllers/streamController'], function(StreamController) {
-          angular.injector(['ng']).invoke(StreamController, this,
-            {'$scope': $scope, '$location': $location});
-        });*/
-        $scope.tracks = [];
-
-        var getStream = function(group) {
-          Soundcloud.buildStream(group, function(tracks) {
-            /* To-do: Only bind needed track properties to $scope */
-            $scope.tracks = $scope.tracks.concat(tracks);
+    .controller('StreamController', ['$scope', '$location', 'streamService', 'Groups',
+      function($scope, $location, streamService, Groups) {
+        require(['content/controllers/streamController'], function(StreamController) {
+          angular.injector(['ng']).invoke(StreamController, this, {
+            '$scope': $scope,
+            '$location': $location,
+            'streamService': streamService,
+            'Groups': Groups
           });
-        };
-
-        /* Watch Groups.currentGroup() for changes? */
-        $scope.$on('groupChanged', function(event, group) {
-          $scope.tracks = [];
-          getStream(group);
         });
       }
     ])
-      .controller('GroupController', ['$scope', '$rootScope', '$location', 'Soundcloud', 'Groups',
-        function($scope, $rootScope, $location, Soundcloud, Groups) {
-          $scope.groups = Groups.all();
-          $scope.current_group = [];
-
-          $scope.setGroup = function(group) {
-            $scope.current_group = group;
-            $rootScope.$broadcast('groupChanged', group);
-          };
+      .controller('GroupController', ['$scope', '$rootScope', '$location', 'Groups',
+        function($scope, $rootScope, $location, Groups) {
+          require(['content/controllers/groupController'], function(GroupController) {
+            angular.injector(['ng']).invoke(GroupController, this, {
+              '$scope': $scope,
+              '$rootScope': $rootScope,
+              '$location': $location,
+              'Groups': Groups
+            });
+          });
         }
       ])
       .controller('FavoritesController', ['$scope', '$location',
