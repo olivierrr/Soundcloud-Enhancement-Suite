@@ -12,13 +12,13 @@ requirejs([ 'jquery',
             'util/messagingClient',
             'logging',
             'angular',
-            'content/contentApp'],
+            'content/seaApp'],
 function(   $,
             messaging,
             client,
             logging,
             angular,
-            contentApp) {
+            seaApp) {
 
   // uncomment the following line if content should be handling some requests
   // sent from background (when appropriate handler is implemented in
@@ -47,7 +47,7 @@ function(   $,
       // inject html to content page (first body div)
       var contentDiv = $('#content');
 
-      angular.bootstrap(contentDiv, [contentApp['name']]);
+      angular.bootstrap(contentDiv, [seaApp['name']]);
 
       contentDiv.addClass('ng-app');
 

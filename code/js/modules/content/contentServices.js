@@ -1,98 +1,134 @@
-define(['angular', 'lib/async', 'staticConfig'], function(angular, async, sc) {
-  'use strict';
+define(['angular', 'staticConfig'], function(angular, sc) {
+    'use strict';
 
-  angular.module('contentApp.services', [])
+    angular.module('seaApp.services', [])
 
-  /* Group Factory Service */
-  .factory('Groups', function() {
+    /* Group Factory Service */
+    .factory('Groups', function() {
 
-    var groups = [{
-      name: 'None',
-      artists: []
-    }, {
-      name: 'Trap Artists',
-      artists: [2051971, 16730, 515070]
-    }, {
-      name: 'Something',
-      artists: [1520490, 92661, 188783]
-    }];
+      var groups = [{
+        name: 'None',
+        artists: []
+      }, {
+        name: 'Trap Artists',
+        artists: [2051971, 16730, 515070]
+      }, {
+        name: 'Something',
+        artists: [1520490, 92661, 188783]
+      }];
 
-    var activeGroup = [];
+      var activeGroup = [];
 
-    return {
-      all: function getAll() {
-        return groups;
-      }
-    };
+      return {
+        all: function getAll() {
+          return groups;
+        }
+      };
 
-  })
+    })
 
-  /* Soundcloud Factory Service */
-  .factory('Soundcloud', function($http, $rootScope, $timeout) {
+    /* Soundcloud Factory Service */
+    .factory('Soundcloud', function($http, $rootScope, $timeout, $q) {
 
-    var request = function(method, path, params, callback) {
-      params.client_id = sc.soundcloud.client_id;
-      params.oauth_token = sc.soundcloud.access_token;
-
-      $http({
-        method: method,
-        url: sc.soundcloud.api.host + path,
-        params: params
-      })
-        .success(callback);
-    };
-
-    return {
-      get: function(path, params, callback) {
-        request('GET', path, params, callback);
-      },
-      getEach: function() {
-
-      },
-      put: function(path, params, callback) {
-        request('PUT', path, params, callback);
-      },
-
-      post: function(path, params, callback) {
-        request('POST', path, params, callback);
-      },
-
-      delete: function(path, params, callback) {
-        request('DELETE', path, params, callback);
-      }
-    };
-  })
-
-  /* Soundcloud Factory Service */
-  .factory('streamService', ['$http', '$rootScope', '$timeout', 'Soundcloud', function($http, $rootScope, $timeout, Soundcloud) {
-
-    var stream = [];
-
-    return {
-      buildStream: function buildStream(group, callback) {
-        var artists = group.artists;
-        var params = {
-          limit: 5
-        };
-
-        async.each(artists, addToStream, function done(err) {
-          if (err) {
-            console.log(err);
-          }
-          callback(stream);
+      var request = function(method, path, params) {
+        _.extend(params, {
+          client_id: sc.soundcloud.client_id,
+          oauth_token: sc.soundcloud.access_token
         });
 
-        function addToStream(artist, cb) {
-          Soundcloud.get('/e1/users/' + artist + '/stream', params, function(result) {
-            stream = stream.concat(result);
-            cb();
-          });
-        }
-      },
+        var deferred = $q.defer();
 
-      getStream: function getStream() {
-        return stream;
-      }
-    };
-  }]);
-});
+        $http({
+          method: method,
+          url: sc.soundcloud.api.host + path,
+          params: params
+        })
+          .success(function(data) {
+            deferred.resolve(data);
+          })
+          .error(function(reason) {
+            deferred.reject(reason);
+          });
+
+        return deferred.promise;
+      };
+
+      return {
+        get: function(path, params) {
+          return request('GET', path, params);
+        },
+        put: function(path, params) {
+          return request('PUT', path, params);
+        },
+
+        post: function(path, params, callback) {
+          return request('POST', path, params);
+        },
+
+        delete: function(path, params, callback) {
+          return request('DELETE', path, params);
+        }
+      };
+    })
+
+    /* Soundcloud Factory Service */
+    .factory('streamService', ['$http', '$rootScope', '$timeout', '$q', 'Soundcloud',
+        function($http, $rootScope, $timeout, $q, Soundcloud) {
+
+          var buildStream = function buildStream(group) {
+            var params = {
+              limit: 5
+            };
+
+            _.each(group.artists, getStreamItems);
+
+            function getStreamItems(artist) {
+              Soundcloud.get('/e1/users/' + artist + '/stream', params)
+                .then(processItems(items));
+            }
+
+            function (items) {
+              _.each(items, formatItem);
+              return items;
+
+              function format(item) {
+                item.stream_date = item.created_at;
+                item.reposted = (item.type.slice(-6) === 'repost');
+
+                if (item.playlist) {
+                  delete item.playlist.created_with;
+                  delete item.playlist.description;
+                  delete item.playlist.kind;
+                  delete item.playlist.release;
+                  delete item.playlist.release_day;
+                  delete item.playlist.release_month;
+                  delete item.playlist.release_year;
+                  delete item.playlist.type;
+                  _.assign(item, item.playlist);
+                } else {
+                  delete item.track.description;
+                  delete item.track.kind;
+                  _.assign(item, item.track);
+                }
+
+                delete item.playlist;
+                delete item.track;
+
+                return item;
+              }
+              _.each(group.artists, getStreamItems);
+
+            };
+
+            return {
+              buildStream: function(group) {
+                return buildStream(group);
+              },
+
+              getStream: function getStream() {
+                return stream;
+              }
+            };
+          }
+          ]);
+    });

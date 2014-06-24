@@ -2,7 +2,7 @@ define(['angular', 'util/messaging', 'util/messagingClient', 'content/contentSer
   function(angular, messaging, client, services) {
     'use strict';
 
-    return angular.module('contentApp.controllers', ['contentApp.services'])
+    return angular.module('seaApp.controllers', ['seaApp.services'])
 
     // content controller
     .controller('StreamController', ['$scope', '$location', 'streamService', 'Groups',

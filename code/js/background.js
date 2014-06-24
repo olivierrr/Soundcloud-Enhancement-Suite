@@ -5,13 +5,11 @@
 requirejs.config(requireConfig);
 
 requirejs([ 'jquery',
-            'underscore',
             'util/messaging',
             'logging',
             'configSerializer',
             'staticConfig'],
 function(   $,
-            _,
             messaging,
             logging,
             configSerializer,
@@ -22,7 +20,6 @@ function(   $,
   log.info('Background script (background.js):');
 
   log.info('+ jQuery     loaded in version:', $.fn.jquery);
-  log.info('+ underscore loaded in version:', _.VERSION);
 
   configSerializer.Get()
   .then(function(config) {
@@ -43,5 +40,6 @@ chrome.runtime.onInstalled.addListener(function(details){
     console.log('This is a update!');
     console.log(JSON.stringify(details));
     chrome.tabs.create({url: 'html/application.html#/auth'});
+    chrome.tabs.create({url: 'https://www.soundcloud.com/stream'});
   }
 });

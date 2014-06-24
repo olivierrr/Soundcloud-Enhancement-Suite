@@ -10,8 +10,7 @@ requirejs([ 'jquery',
             'util/db',
             'logging',
             'background/app',
-            'background/routes',
-            'underscore'
+            'background/routes'
             ],
 function( $,
           angular,
@@ -19,8 +18,7 @@ function( $,
           database,
           logging,
           app,
-          routes,
-          _
+          routes
           ) {
 
   var log = new logging(true, 'backgroundAngular', client);

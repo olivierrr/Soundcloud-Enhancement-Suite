@@ -12,5 +12,5 @@ define([
   'content/contentControllers'
   ], function (angular, plangular, services, filters, controllers) {
     'use strict';
-    return angular.module('contentApp', ['plangular', 'ngWaveform', 'contentApp.services', 'contentApp.controllers', 'contentApp.filters']);
+    return angular.module('seaApp', ['plangular', 'ngWaveform', 'seaApp.services', 'seaApp.controllers', 'seaApp.filters']);
 });

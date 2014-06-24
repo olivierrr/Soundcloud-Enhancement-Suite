@@ -38,8 +38,8 @@
     rc.paths.test = __dirname + '/../modules';
 
     // set paths to libraries
-    rc.paths.underscore = pathPrefix + '/js/lib/underscore';
-    rc.paths['underscore.string'] = pathPrefix + '/js/lib/underscore.string';
+    rc.paths.lodash = pathPrefix + '/js/lodash';
+    rc.paths['lodash.string'] = pathPrefix + '/js/lodash.string';
 
     // you may want to remap some paths to replace extension modules with mock versions for unit tests, eg.:
     //rc.paths['type_a/myModule'] = __dirname + '/type_a/myModule';

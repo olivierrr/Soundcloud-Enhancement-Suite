@@ -11742,7 +11742,7 @@ function annotate(fn) {
       fnText = fn.toString().replace(STRIP_COMMENTS, '');
       argDecl = fnText.match(FN_ARGS);
       forEach(argDecl[1].split(FN_ARG_SPLIT), function(arg){
-        arg.replace(FN_ARG, function(all, underscore, name){
+        arg.replace(FN_ARG, function(all, lodash, name){
           $inject.push(name);
         });
       });

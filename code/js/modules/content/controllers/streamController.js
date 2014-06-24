@@ -8,16 +8,10 @@ define(['util/messagingClient', 'logging'],
     return ['$scope', '$location', 'streamService', 'Groups', function($scope, $location, streamService, Groups) {
       log.debug('Stream controller started');
 
-
-      var getStream = function getStream(stream) {
-        $scope.stream = stream;
-        console.log(stream);
-        console.log($scope.stream);
-      };
-
       // listen for group change and get the new stream
-      $scope.$on('activeGroupChanged', function (event, group) {
-        streamService.buildStream(group, getStream);
+      $scope.$on('activeGroupChanged', function buildActiveStream(event, group) {
+        $scope.group = group;
+        $scope.stream = streamService.buildStream(group);
       });
 
       $scope.$apply();

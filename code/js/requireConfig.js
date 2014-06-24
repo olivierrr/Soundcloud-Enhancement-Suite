@@ -4,6 +4,7 @@ var requireConfig = {
   // Optionally specify different paths for specific modules
   paths: {
     lib: '/js/lib',
+    lodash: '/js/lib/lodash',
     angular: '/js/lib/angular/angular'
   },
   shim: {

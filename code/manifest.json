@@ -38,7 +38,6 @@
       "js": [
         "js/lib/require.js",
         "js/lib/jquery.js",
-        "js/lib/underscore.js",
         "js/lib/waveform.js",
         "js/requireContent.js",
         "js/requireConfig.js",
@@ -50,7 +49,6 @@
       "js": [
         "js/lib/require.js",
         "js/lib/jquery.js",
-        "js/lib/underscore.js",
         "js/requireContent.js",
         "js/requireConfig.js",
         "js/following_content.js"

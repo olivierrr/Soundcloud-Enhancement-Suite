@@ -1,4 +1,4 @@
-define(['underscore', 'backgroundHandlers', 'contentHandlers'],
+define(['lodash', 'backgroundHandlers', 'contentHandlers'],
 function(_,            backgroundHandlers,   contentHandlers) {
 
   // Module for request-response message communication between background part
