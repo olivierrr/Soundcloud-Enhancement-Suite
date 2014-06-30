@@ -13,7 +13,7 @@ function(_,            backgroundHandlers,   contentHandlers) {
   // `sender` describing the sender entity, and `sendResponse` that is a
   // function provided by the sender in order to provide response back.
   // `sendResponse` function accepts at least one argument: the response (of any
-  // type). All the available handler functions must be stored in either of the
+  // type). All the availabl`e handler functions must be stored in either of the
   // `handlers` storage objects in backgroundHandlers.js or contentHandlers.js.
   //
 

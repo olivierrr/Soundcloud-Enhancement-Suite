@@ -11,7 +11,8 @@ define(['util/messagingClient', 'logging'],
       // listen for group change and get the new stream
       $scope.$on('activeGroupChanged', function buildActiveStream(event, group) {
         $scope.group = group;
-        $scope.stream = streamService.buildStream(group);
+        streamService.buildStream(group);
+        console.log($scope.stream);
       });
 
       $scope.$apply();
