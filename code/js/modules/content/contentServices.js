@@ -88,8 +88,11 @@ define(['angular', 'staticConfig'], function(angular, sc) {
       }
 
       function getArtistData(id) {
-        return $q.all({tracks: getTrackData(id),
-          playlists: getPlaylists(id)});
+        var data = {tracks: getTrackData(id),
+          playlists: getPlaylists(id)};
+
+          console.log(data);
+        return $q.all(data);
       }
 
 
@@ -98,6 +101,7 @@ define(['angular', 'staticConfig'], function(angular, sc) {
 
 
         return $q.all(artistIds.map(getArtistData)).then(function(infos) {
+          console.log(infos);
           return infos.reduce(function(stream, info) {
             return stream.concat(info.tracks, info.playlists);
           }, _stream);
