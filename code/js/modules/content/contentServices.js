@@ -61,11 +61,11 @@ define(['angular', 'staticConfig'], function(angular, sc) {
         return request('PUT', path, params);
       },
 
-      post: function(path, params, callback) {
+      post: function(path, params) {
         return request('POST', path, params);
       },
 
-      delete: function(path, params, callback) {
+      delete: function(path, params) {
         return request('DELETE', path, params);
       }
     };
@@ -75,64 +75,37 @@ define(['angular', 'staticConfig'], function(angular, sc) {
   .factory('streamService', ['$http', '$rootScope', '$timeout', '$q', 'Soundcloud',
     function($http, $rootScope, $timeout, $q, Soundcloud) {
 
-      var buildStream = function buildStream(group) {
-        var params = {
+      function getTrackData(id) {
+        return Soundcloud.get('/users/' + id + '/tracks', {
           limit: 5
-        };
-        var stream = [];
+        });
+      }
 
-        _.each(group.artists, getArtistItems);
+      function getPlaylists(id) {
+        return Soundcloud.get('/users/' + id + '/playlists', {
+          limit: 5
+        });
+      }
 
-        function getArtistItems(artist) {
-          Soundcloud.get('/e1/users/' + artist + '/stream', params)
-            .then(formatItems)
-            .then(function(items) {
-              stream = stream.concat(items);
-              return items;
-            });
-        }
+      function getArtistData(id) {
+        return $q.all({tracks: getTrackData(id),
+          playlists: getPlaylists(id)});
+      }
 
-        function formatItems(items) {
-          _.each(items, format);
-        }
 
-        function format(item) {
-          item.stream_date = item.created_at;
-          item.reposted = (item.type.slice(-6) === 'repost');
+      function _buildStream(artistIds) {
+        var _stream = [];
 
-          delete item.kind;
 
-          if (item.playlist) {
-            var pl = item.playlist;
-
-            delete pl.created_with;
-            delete pl.description;
-            delete pl.kind;
-            delete pl.release;
-            delete pl.release_day;
-            delete pl.release_month;
-            delete pl.release_year;
-            delete pl.type;
-            _.assign(item, pl);
-          } else {
-            delete item.track.description;
-            delete item.track.kind;
-            _.assign(item, item.track);
-          }
-
-          delete item.playlist;
-          delete item.track;
-         }
-      };
+        return $q.all(artistIds.map(getArtistData)).then(function(infos) {
+          return infos.reduce(function(stream, info) {
+            return stream.concat(info.tracks, info.playlists);
+          }, _stream);
+        });
+      }
 
       return {
-        buildStream: function(group) {
-          return buildStream(group);
-        },
-
-        getStream: function getStream() {
-          return stream;
-        }
+        buildStream: _buildStream
       };
     }
   ]);

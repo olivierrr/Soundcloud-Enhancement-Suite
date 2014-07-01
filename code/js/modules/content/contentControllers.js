@@ -5,12 +5,13 @@ define(['angular', 'util/messaging', 'util/messagingClient', 'content/contentSer
     return angular.module('seaApp.controllers', ['seaApp.services'])
 
     // content controller
-    .controller('StreamController', ['$scope', '$location', 'streamService', 'Groups',
-      function($scope, $location, streamService, Groups) {
+    .controller('StreamController', ['$scope', '$location', '$q', 'streamService', 'Groups',
+      function($scope, $location, $q, streamService, Groups) {
         require(['content/controllers/streamController'], function(StreamController) {
           angular.injector(['ng']).invoke(StreamController, this, {
             '$scope': $scope,
             '$location': $location,
+            '$q': $q,
             'streamService': streamService,
             'Groups': Groups
           });

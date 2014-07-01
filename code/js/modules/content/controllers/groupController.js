@@ -10,7 +10,7 @@ define(['util/messagingClient', 'logging'],
 
       function getGroups() {
         $scope.groups = Groups.all();
-      };
+      }
 
       getGroups();
       
