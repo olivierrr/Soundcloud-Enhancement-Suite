@@ -47,6 +47,7 @@ define(['angular', 'staticConfig'], function(angular, sc) {
           deferred.resolve(data);
         })
         .error(function(reason) {
+          console.log(reason);
           deferred.reject(reason);
         });
 
@@ -75,33 +76,33 @@ define(['angular', 'staticConfig'], function(angular, sc) {
   .factory('streamService', ['$http', '$rootScope', '$timeout', '$q', 'Soundcloud',
     function($http, $rootScope, $timeout, $q, Soundcloud) {
 
+      /* 
+       * Since we can't use the non-public stream endpoint, we have to call tracks and
+       * playlists individually to build the user's stream. Reposts are inaccessible with 
+       * public API.
+       */
       function getTrackData(id) {
-        return Soundcloud.get('/users/' + id + '/tracks', {
-          limit: 5
-        });
+        return Soundcloud.get('/users/' + id + '/tracks', {});
       }
 
       function getPlaylists(id) {
-        return Soundcloud.get('/users/' + id + '/playlists', {
-          limit: 5
-        });
+        return Soundcloud.get('/users/' + id + '/playlists', {});
       }
 
       function getArtistData(id) {
-        var data = {tracks: getTrackData(id),
-          playlists: getPlaylists(id)};
-
-          console.log(data);
-        return $q.all(data);
+        // combines both requests into one promise
+        return $q.all({
+            tracks: getTrackData(id),
+            playlists: getPlaylists(id)
+          });
       }
 
 
       function _buildStream(artistIds) {
         var _stream = [];
 
-
+        // Once the entire stream is built, this is resolved.
         return $q.all(artistIds.map(getArtistData)).then(function(infos) {
-          console.log(infos);
           return infos.reduce(function(stream, info) {
             return stream.concat(info.tracks, info.playlists);
           }, _stream);
