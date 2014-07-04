@@ -13,13 +13,14 @@ define(['util/messagingClient', 'logging'],
       }
 
       getGroups();
-      
+
       $scope.activeGroup = [];
 
       $scope.setActiveGroup = function setActiveGroup(group) {
         if ($scope.activeGroup != group) {
           $scope.activeGroup = group;
           $rootScope.$broadcast('activeGroupChanged', group);
+          console.log("Yo");
         }
       };
 

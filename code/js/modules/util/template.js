@@ -6,7 +6,7 @@ define(['jquery'], function($) {
   return {
     // template loading (synchronous)
     load: function(name) {
-      var target = '/html/templates/' + name + '.html';
+      var target = '/html/' + name + '.html';
       if (!(target in _cache)) {
         $.ajax({
           url: chrome.extension.getURL(target),

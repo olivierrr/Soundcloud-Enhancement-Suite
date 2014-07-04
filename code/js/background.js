@@ -18,8 +18,15 @@ function(   $,
   var log = new logging(true,  'background');
 
   log.info('Background script (background.js):');
+  log.info('jQuery loaded in version: ' + $.fn.jquery);
 
-  log.info('+ jQuery     loaded in version:', $.fn.jquery);
+  chrome.tabs.query({}, function (tabs) {
+  for (var i = 0; i < tabs.length; i++) {
+    if (tabs[i].url.indexOf(sc.reload.query) > 1) {
+      chrome.tabs.reload(tabs[i].id);
+    }
+  }
+});
 
   configSerializer.Get()
   .then(function(config) {
@@ -30,7 +37,7 @@ function(   $,
 });
 
 
-// Check whether new version is installed
+// Check whether new version is installeds
 // this call should stay here due to requirejs async
 chrome.runtime.onInstalled.addListener(function(details){
   if(details.reason == 'install'){
@@ -40,6 +47,5 @@ chrome.runtime.onInstalled.addListener(function(details){
     console.log('This is a update!');
     console.log(JSON.stringify(details));
     chrome.tabs.create({url: 'html/application.html#/auth'});
-    chrome.tabs.create({url: 'https://www.soundcloud.com/stream'});
   }
 });

@@ -33,7 +33,7 @@ function(   $,
   client.sendBroadcast({
     cmd: 'LoadHtml',
     args: {
-      template: 'stream',
+      template: 'stream/stream',
       data: {}
     }
   }, function(response) {
@@ -46,7 +46,7 @@ function(   $,
   client.sendBroadcast({
     cmd: 'LoadHtml',
     args: {
-      template: 'groups',
+      template: 'templates/groups',
       data: {}
     }
   }, function(response) {

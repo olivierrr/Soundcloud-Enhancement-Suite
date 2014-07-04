@@ -18,10 +18,14 @@ define({
     }
   },
 
+  reload: {
+    query: 'soundcloud'
+  },
+
   db : {
     name: 'se-suite'
   },
-  
+
   soundcloud : {
     access_token: '1-79854-2051971-6c01c0daaba6dcfe',
     api: {
@@ -54,7 +58,7 @@ define({
 
     auth: '/auth',
     auth_callback: '/auth/soundcloud/callback',
-    
+
     popup: '/popup'
   }
 });

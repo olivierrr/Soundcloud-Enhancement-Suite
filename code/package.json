@@ -1,0 +1,9 @@
+{
+  "name": "chrome-angular-skeleton",
+  "version": "0.0.0",
+  "devDependencies": {
+    "tiny-lr": "0.0.8",
+    "gulp": "^3.8.5"
+  },
+  "dependencies": {}
+}

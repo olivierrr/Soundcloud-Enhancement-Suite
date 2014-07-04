@@ -1,8 +1,8 @@
 {
-  "name": "Chrome Angular extension with require.js",
+  "name": "Soundcloud Enhancement Suite",
   "version": "0.1.0",
   "manifest_version": 2,
-  "description": "angular.js chrome extension with require.js",
+  "description": "Soundcloud Enhancement Suite",
   "icons": {
     "48": "images/icon.png"
   },

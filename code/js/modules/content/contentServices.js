@@ -10,7 +10,7 @@ define(['angular', 'staticConfig'], function(angular, sc) {
       name: 'None',
       artists: []
     }, {
-      name: 'Trap Artists',
+      name: 'Trap Artist',
       artists: [2051971, 16730, 515070]
     }, {
       name: 'Something',
@@ -30,7 +30,7 @@ define(['angular', 'staticConfig'], function(angular, sc) {
   /* Soundcloud Factory Service */
   .factory('Soundcloud', function($http, $rootScope, $timeout, $q) {
 
-    var request = function(method, path, params) {
+    function request(method, path, params) {
       _.extend(params, {
         client_id: sc.soundcloud.client_id,
         oauth_token: sc.soundcloud.access_token
@@ -47,7 +47,6 @@ define(['angular', 'staticConfig'], function(angular, sc) {
           deferred.resolve(data);
         })
         .error(function(reason) {
-          console.log(reason);
           deferred.reject(reason);
         });
 
@@ -55,18 +54,18 @@ define(['angular', 'staticConfig'], function(angular, sc) {
     };
 
     return {
-      get: function(path, params) {
+      get: function get(path, params) {
         return request('GET', path, params);
       },
-      put: function(path, params) {
+      put: function put(path, params) {
         return request('PUT', path, params);
       },
 
-      post: function(path, params) {
+      post: function post(path, params) {
         return request('POST', path, params);
       },
 
-      delete: function(path, params) {
+      delete: function del(path, params) {
         return request('DELETE', path, params);
       }
     };
@@ -76,17 +75,17 @@ define(['angular', 'staticConfig'], function(angular, sc) {
   .factory('streamService', ['$http', '$rootScope', '$timeout', '$q', 'Soundcloud',
     function($http, $rootScope, $timeout, $q, Soundcloud) {
 
-      /* 
+      /*
        * Since we can't use the non-public stream endpoint, we have to call tracks and
-       * playlists individually to build the user's stream. Reposts are inaccessible with 
+       * playlists individually to build the user's stream. Reposts are inaccessible with
        * public API.
        */
       function getTrackData(id) {
-        return Soundcloud.get('/users/' + id + '/tracks', {});
+        return Soundcloud.get('/users/' + id + '/tracks', {limit: 1});
       }
 
       function getPlaylists(id) {
-        return Soundcloud.get('/users/' + id + '/playlists', {});
+        return Soundcloud.get('/users/' + id + '/playlists', {limit: 5});
       }
 
       function getArtistData(id) {
