@@ -1,7 +1,7 @@
 <div plangular class="activity">
     <div role="group" class="sound streamContext" aria-label="Track: {{item.title}} by {{item.user.permalink}}">
 
-        <!-- Begin Cover Art -->
+        <!-- Cover Art -->
         <a class="sound__coverArt" href="{{item.permalink_url}}">
 
             <div class="image readOnly customImage image__hasPlaceholder" style="height: 100%; width: 100%;">
@@ -10,7 +10,6 @@
 
             </div>
         </a>
-
         <!-- End Cover Art -->
 
         <div class="sound__header">
@@ -19,15 +18,17 @@
                 <!-- Username -->
                 <div class="sc-type-light"> <a href="https://www.soundcloud.com/{{item.user.permalink}}" class="soundTitle__username  sc-link-light "> {{item.user.username}}  </a>
                 </div>
+                <!-- End Username -->
 
                 <div>
                     <!-- Play Button -->
                     <div class="sc-media-image soundTitle__playButton ">
                         <button class="sc-button sc-button-play sc-button-large" title="Play" ng-click="player.play(item)" ng-hide="player.playing == item">
                         </button>
-                        <button class="sc-button sc-button-play sc-button-large sc-button sc-button-pause" title="Play" ng-click="player.pause()" ng-show="player.playing == item">
+                        <button class="sc-button sc-button-play sc-button-large sc-button sc-button-pause" title="Pause" ng-click="player.pause()" ng-show="player.playing == item">
                         </button>
                     </div>
+                    <!-- End Play Button -->
 
                     <!-- Genre -->
                     <div class="sc-media-content">
@@ -41,17 +42,19 @@
                             </div>
                         </div>
                     </div>
+                    <!-- End Genre -->
 
                 </div>
             </div>
 
-            <!-- Date/Time -->
+            <!-- Time -->
             <div class="sound__uploadTime">
                 <time class="relativeTime" title="Posted on 22 May 2014 15:28" datetime="2014-05-22T19:28:51.000Z">
                     <span class="sc-visuallyhidden">Posted 49 mins ago</span>
                     <span aria-hidden="true">{{item.created_at}}</span>
                 </time>
             </div>
+            <!-- End Time -->
         </div>
 
         <!-- Waveform -->
@@ -61,7 +64,7 @@
                 <div ng-waveform src="{{item.waveform_url}}" width="683" height="60" innercolor="#444444"></div>
                 <div class="commentPlaceholder g-z-index-content">
                     <div class="commentPlaceholder__avatar">
-                        <img aria-hidden="true" src="https://i1.sndcdn.com/avatars-000078152969-fmhpwn-t20x20.jpg?30a2558" class="" width="20" height="20">
+                      <!--  <img aria-hidden="true" src="https://i1.sndcdn.com/avatars-000078152969-fmhpwn-t20x20.jpg?30a2558" class="" width="20" height="20"> -->
                     </div>
                 </div>
 
@@ -70,6 +73,7 @@
 
             </div>
         </div>
+        <!-- End Waveform -->
 
         <div class="commentForm sc-media commentForm__transition small">
         </div>

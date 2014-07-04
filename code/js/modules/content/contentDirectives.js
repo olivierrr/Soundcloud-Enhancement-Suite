@@ -25,7 +25,7 @@ define(['angular', 'staticConfig', 'util/messaging', 'util/messagingClient', ], 
                     element.html(response).show();
 
                     $compile(element.contents())(scope);
-                })
+                });
             };
 
 
@@ -36,7 +36,7 @@ define(['angular', 'staticConfig', 'util/messaging', 'util/messagingClient', ], 
                 item: '=streamItem'
             }
         };
-    })
+    });
 });
 
 /* .directive('trackPlayer', function() {
