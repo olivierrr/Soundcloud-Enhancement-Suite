@@ -26,20 +26,20 @@ function(   $,
 
   messaging.contentInitialize();
   var log = new logging(true, 'content', client);
-  log.debug('content started');
+  log.debug('following content started');
   'use strict';
+        $('.usersList').remove();
 
 
   // load injected html template from extension's resources
   client.sendBroadcast({
     cmd: 'LoadHtml',
     args: {
-      template: 'following',
+      template: 'templates/following',
       data: {}
     }
   }, function(response) {
     $(function() {
-      $('.usersList').remove();
 
       $(response)
       .prependTo($('.g-main-scroll-area'));

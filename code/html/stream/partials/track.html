@@ -4,9 +4,9 @@
         <!-- Cover Art -->
         <a class="sound__coverArt" href="{{item.permalink_url}}">
 
-            <div class="image readOnly customImage image__hasPlaceholder" style="height: 100%; width: 100%;">
-
-                <img class="image__full g-opacity-transition" src="{{item.artwork_url}}" width="100%" height="100%" alt="4B {MDW 2K14 MIX}" style="opacity: 1;">
+            <div ng-switch on="item.artwork_url" class="image readOnly customImage image__hasPlaceholder" style="height: 100%; width: 100%;">
+                <img ng-switch-default class="image__full g-opacity-transition" src="{{item.artwork_url}}" width="100%" height="100%" alt="4B {MDW 2K14 MIX}" style="opacity: 1;">
+                <img ng-switch-when="null" class="image__full g-opacity-transition" src="{{item.user.avatar_url}}" width="100%" height="100%" alt="4B {MDW 2K14 MIX}" style="opacity: 1;">
 
             </div>
         </a>

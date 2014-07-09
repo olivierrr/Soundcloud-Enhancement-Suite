@@ -1,11 +1,15 @@
-<div class="usersList floating user-avatar-badge lazyLoadingList">
-<div class="sortfields">This is where sort goes?</div>
+
+<ul class="g-tabs" style="margin: 0 0 5px 0" data-ng-repeat="(alpha, key) in following">
+<li class="g-tabs-item networkTabs__following"><a class="g-tabs-link" href="#">A{{alpha}}</a></li>
+
+</ul>
     <ul class="lazyLoadingList__list sc-list-nostyle sc-clearfix">
+    <div class="usersList floating user-avatar-badge lazyLoadingList" ng-controller="FollowController">
         <li class="usersList__item" width="150px" height="150px">
             <div class="userAvatarBadge hoverActions">
                 <div class="userAvatarBadge__header">
                     <div class="sc-type-h2 sc-type-light">
-                        <span class="userAvatarBadge__username g-type-shrinkwrap-inline" > <a href="/ball-trap-music" class="userAvatarBadge__usernameLink" title="Visit ︻╦╤─ ƱZ ─╤╦︻’s profile">  ︻╦╤─ ƱZ ─╤╦︻  </a>
+                        <span class="userAvatarBadge__username g-type-shrinkwrap-inline" > <a href="{{user.permalink_url}}" class="userAvatarBadge__usernameLink" title="Visit {{user.username}}’s profile">  {{user.username}}  </a>
                         </span>​
                         <span class="userAvatarBadge__premiumIndicator">
                             <span>
@@ -33,7 +37,7 @@
                     <a href="/ball-trap-music" class="userAvatarBadge__avatarLink">
                         <div class="userAvatarBadge__avatar">
                             <div class="image readOnly customImage image-200 image__hasPlaceholder image__hasPlaceholder-user image__hasPlaceholder-200" style="height: 200px; width: 200px;">
-                                <img class="image__full g-opacity-transition" src="https://i1.sndcdn.com/avatars-000088204001-0m8jwg-t200x200.jpg?30a2558" width="200" height="200" alt="︻╦╤─ ƱZ ─╤╦︻’s avatar" style="opacity: 1;">
+                                <img class="image__full g-opacity-transition" src="{{user.avatar_url}}" width="200" height="200" alt="︻╦╤─ ƱZ ─╤╦︻’s avatar" style="opacity: 1;">
 
                             </div>
                         </div>

@@ -6,7 +6,7 @@ define(['util/messagingClient', 'logging'],
   function(client, logging) {
     var log = new logging(true, 'GroupController', client);
     return ['$scope', '$rootScope', '$location', '$http', 'Groups', function($scope, $rootScope, $location, $http, Groups) {
-      log.debug('Group controller started');
+      log.debug('Groups controller started');
 
       function getGroups() {
         $scope.groups = Groups.all();

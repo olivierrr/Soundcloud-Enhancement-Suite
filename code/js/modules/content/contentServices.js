@@ -122,4 +122,29 @@ define(['angular', 'staticConfig'], function(angular, sc) {
             };
         }
     ]);
+    // .factory('followingService', ['$http', '$timeout', '$q', 'Soundcloud',
+    //     function($http, $timeout, $q, Soundcloud) {
+
+    //         function getFollows(offset) {
+    //             return Soundcloud.get('/me/followings', {
+    //                 limit: 1,
+    //                 offset: offset
+    //             });
+    //         };
+
+    //         function _getFollowingList() {
+    //             var promises = [],
+    //                 i = 0;
+    //             while (i <= count) {
+    //                 promises.push(getFollows(i).then(function(data) { return data;}));
+    //                 i += 200;
+    //             };
+    //             return $q.all([promises]);
+    //         };
+
+    //         return {
+    //             getFollowingList: _getFollowingList;
+    //         };
+    //     }
+    // ]);
 });

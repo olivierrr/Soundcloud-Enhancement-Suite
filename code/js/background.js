@@ -36,6 +36,10 @@ function(   $,
   messaging.backgroundInitialize();
 });
 
+chrome.tabs.onUpdated.addListener(function()
+{
+  console.log("Hot damn");
+});
 
 // Check whether new version is installeds
 // this call should stay here due to requirejs async
