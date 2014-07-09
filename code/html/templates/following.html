@@ -1,10 +1,11 @@
 
-<ul class="g-tabs" style="margin: 0 0 5px 0" data-ng-repeat="(alpha, key) in following">
-<li class="g-tabs-item networkTabs__following"><a class="g-tabs-link" href="#">A{{alpha}}</a></li>
+<div ng-controller="FollowController">
+<ul class="g-tabs" style="margin: 0 0 5px 0">
+<li class="g-tabs-item networkTabs__following" data-ng-repeat="(alpha, key) in following"><a class="g-tabs-link" href="#">{{alpha}}</a></li>
 
 </ul>
     <ul class="lazyLoadingList__list sc-list-nostyle sc-clearfix">
-    <div class="usersList floating user-avatar-badge lazyLoadingList" ng-controller="FollowController">
+    <div class="usersList floating user-avatar-badge lazyLoadingList">
         <li class="usersList__item" width="150px" height="150px">
             <div class="userAvatarBadge hoverActions">
                 <div class="userAvatarBadge__header">
@@ -56,4 +57,4 @@
             </div>
         </li>
     </ul>
-</div>
+</div></div>

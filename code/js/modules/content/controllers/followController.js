@@ -19,10 +19,21 @@ define(['util/messagingClient', 'logging'],
 
             var addToIndex = function(user) {
                 var letter = user.username.charAt(0).toUpperCase();
-                if (list[letter] === undefined) {
-                    list[letter] = [];
+                if (letter.match(/ABCDEFGHIJKLMNOPQRSTUVWXYZ/)) {
+                    if (list[letter] === undefined) {
+                        list[letter] = [];
+                    }
+                    list[letter].push(user);
                 }
-                list[letter].push(user);
+                else if (letter.match(/1234567890/)) {
+                    if (list['#'] === undefined) {
+                        list['#'] = [];
+                    }
+                    list['#'].push(user);
+                }
+                else {
+                    console.log('hello');
+                }
             };
 
             /**
@@ -53,12 +64,12 @@ define(['util/messagingClient', 'logging'],
 
 
             getFollowList().then(function(users) {
-                console.log(list);
+                $scope.following = list;
             });
 
             $scope.getList = function(letter) {
                 $scope.follow = list[letters];
-            }
+            };
 
             $scope.$apply();
         }];
