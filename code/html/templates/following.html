@@ -1,12 +1,15 @@
 
 <div ng-controller="FollowController">
 <ul class="g-tabs" style="margin: 0 0 5px 0">
-<li class="g-tabs-item networkTabs__following" data-ng-repeat="(alpha, key) in following"><a class="g-tabs-link" href="#">{{alpha}}</a></li>
+<li class="g-tabs-item networkTabs__following" data-ng-repeat="(alpha, key) in following">
+<a class="g-tabs-link" ng-click="setCurrentLetter(alpha)">{{alpha}}</a>
+</li>
 
 </ul>
     <ul class="lazyLoadingList__list sc-list-nostyle sc-clearfix">
+            <h1>{{currentLetter}}</h1>
     <div class="usersList floating user-avatar-badge lazyLoadingList">
-        <li class="usersList__item" width="150px" height="150px">
+        <li class="usersList__item" width="150px" height="150px" data-ng-repeat="user in currentLetterGroup">
             <div class="userAvatarBadge hoverActions">
                 <div class="userAvatarBadge__header">
                     <div class="sc-type-h2 sc-type-light">

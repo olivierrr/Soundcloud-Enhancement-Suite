@@ -8,31 +8,30 @@ define(['util/messagingClient', 'logging'],
         return ['$scope', '$location', '$q', '$timeout', 'Soundcloud', 'Groups', 'filterFilter', function($scope, $location, $q, $timeout, Soundcloud, Groups, filterFilter) {
             log.debug('Follow controller started');
 
-            /*var count = Soundcloud.getFollowCount()
-                    .then(function(result) {
-                        return result;
-                    });*/
-            var count = 620;
+            var count = 0;
 
             var list = {};
 
 
             var addToIndex = function(user) {
                 var letter = user.username.charAt(0).toUpperCase();
-                if (letter.match(/ABCDEFGHIJKLMNOPQRSTUVWXYZ/)) {
+                if (letter.match(/[A-Z]/)) {
                     if (list[letter] === undefined) {
                         list[letter] = [];
                     }
                     list[letter].push(user);
                 }
-                else if (letter.match(/1234567890/)) {
-                    if (list['#'] === undefined) {
-                        list['#'] = [];
+                else if (letter.match(/\d/)) {
+                    if (list['#-@'] === undefined) {
+                        list['#-@'] = [];
                     }
-                    list['#'].push(user);
+                    list['#-@'].push(user);
                 }
                 else {
-                    console.log('hello');
+                    if (list['#-@'] === undefined) {
+                        list['#-@'] = [];
+                    }
+                    list['#-@'].push(user);
                 }
             };
 
@@ -55,6 +54,7 @@ define(['util/messagingClient', 'logging'],
             function getFollowList() {
                 var promises = [],
                     i = 0;
+                    console.log(count);
                 while (i <= count) {
                     promises.push(getFollows(i).then(function(users) { return users.map(addToIndex); }));
                     i += 200;
@@ -62,14 +62,24 @@ define(['util/messagingClient', 'logging'],
                 return $q.all(promises);
             };
 
-
-            getFollowList().then(function(users) {
+            Soundcloud.get('/me', {})
+                    .then(function(me) {
+                        count = me.followings_count;
+                        console.log(count);
+                    })
+                    .then(function() {
+            getFollowList()}).then(function(users) {
                 $scope.following = list;
             });
 
             $scope.getList = function(letter) {
                 $scope.follow = list[letters];
             };
+
+            $scope.setCurrentLetter = function(letter) {
+                $scope.currentLetterGroup = $scope.following[letter];
+                $scope.currentLetter = letter;
+            }
 
             $scope.$apply();
         }];
