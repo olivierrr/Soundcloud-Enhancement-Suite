@@ -7,43 +7,11 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "code/html/templates/stream.html",
-			"settings":
-			{
-				"buffer_size": 357,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "code/js/modules/content/contentDirectives.js",
-			"settings":
-			{
-				"buffer_size": 1638,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "code/js/modules/content/contentControllers.js",
-			"settings":
-			{
-				"buffer_size": 2087,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "code/js/modules/content/contentServices.js",
-			"settings":
-			{
-				"buffer_size": 4414,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 177.0,
+		"height": 207.0,
 		"selected_items":
 		[
 			[
@@ -51,8 +19,8 @@
 				"HTMLPrettify"
 			],
 			[
-				"package",
-				"Package Control: Install Package"
+				"pretti",
+				"HTMLPrettify"
 			],
 			[
 				"prettif",
@@ -63,20 +31,20 @@
 				"HTMLPrettify"
 			],
 			[
+				"pret",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
 				"Snippet: ",
 				"Snippet: setTimeout"
 			],
 			[
 				"pack",
 				"Package Control: Install Package"
-			],
-			[
-				"pret",
-				"HTMLPrettify"
-			],
-			[
-				"pretti",
-				"HTMLPrettify"
 			],
 			[
 				"color",
@@ -140,69 +108,111 @@
 	},
 	"file_history":
 	[
+		"/Users/harryhedger/sites/sces/code/js/scripts/followingContent.js",
+		"/Users/harryhedger/sites/sces/code/html/groups/groups.html",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/groupController.js",
+		"/Users/harryhedger/sites/sces/code/js/util/template.js",
+		"/Users/harryhedger/sites/sces/code/manifest.json",
+		"/Users/harryhedger/sites/sces/code/js/scripts/streamContent.js",
+		"/Users/harryhedger/sites/sces/code/js/app/app.js",
+		"/Users/harryhedger/sites/sces/code/html/following/following.html",
+		"/Users/harryhedger/sites/sces/code/html/stream/stream.html",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/followingController.js",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/streamController.js",
+		"/Users/harryhedger/sites/zippy/app.js",
+		"/Users/harryhedger/sites/sces/code/js/app/contentServices.js",
+		"/Users/harryhedger/sites/sces/code/js/app/plangular.js",
+		"/Users/harryhedger/sites/sces/code/js/app/ng-waveform.js",
+		"/Users/harryhedger/sites/sces/code/js/app/contentDirectives.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular.min.js",
+		"/Users/harryhedger/sites/sces/code/js/app/contentFilters.js",
+		"/Users/harryhedger/sites/sces/code/js/app/contentControllers.js",
+		"/Users/harryhedger/sites/sces/code/html/background/background.html",
+		"/Users/harryhedger/sites/sces/code/html/background/asdf.html",
+		"/Users/harryhedger/sites/sces/code/js/modules/staticConfig.js",
+		"/Users/harryhedger/sites/sces/code/js/util/url.js",
+		"/Users/harryhedger/sites/sces/sces.sublime-project",
+		"/Users/harryhedger/sites/sces/code/js/modules/backgroundHandlers.js",
+		"/Users/harryhedger/sites/sces/code/js/background.js",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/followController.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/backgroundSoundcloud.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/config.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/configSerializer.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/contentHandlers.js",
+		"/Users/harryhedger/sites/sces/code/js/streamContent.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/logging.js",
+		"/Users/harryhedger/sites/sces/code/html/background/auth.html",
+		"/Users/harryhedger/sites/sces/code/package.json",
+		"/Users/harryhedger/sites/sces/code/html/background/options.html",
+		"/Users/harryhedger/sites/sces/code/js/stream_content.js",
+		"/Users/harryhedger/sites/sces/code/js/following_content.js",
+		"/Users/harryhedger/sites/sces/code/html/background.html",
+		"/Users/harryhedger/sites/sces/code/js/modules/util/messagingClient.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/util/template.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/waveform.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/lodash.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/waveformer.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-resource.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/seaApp.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/util/messaging.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-sanitize.min.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-loader.min.js",
+		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/harryhedger/sites/sces/code/js/lib/jquery.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-cookies.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-resource.min.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/followController.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/contentControllers.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/contentDirectives.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/streamController.js",
+		"/Users/harryhedger/sites/sces/package.json",
+		"/Users/harryhedger/sites/sces/code/json_guide",
+		"/Users/harryhedger/sites/sces/code/index.js",
+		"/Users/harryhedger/sites/sces/code/js/backgroundAngular.js",
+		"/Users/harryhedger/sites/sces/code/js/requireConfig.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/util/url.js",
+		"/Users/harryhedger/sites/sces/code/html/application.html",
+		"/Users/harryhedger/sites/sces/code/html/likes/likes.html",
+		"/Users/harryhedger/sites/sces/code/css/bootstrap.css",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/contentServices.js",
+		"/Users/harryhedger/sites/sces/code/html/templates/stream.html",
 		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/header.php",
 		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/style.css",
 		"/Users/harryhedger/Downloads/ghost-0.4.2/README.md",
 		"/Users/harryhedger/sites/sces/code/js/lib/require.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular.min.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/contentServices.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/contentControllers.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/groupController.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/streamController.js",
 		"/Users/harryhedger/Downloads/project/demo",
 		"/Users/harryhedger/Downloads/project (1)/main.asm",
 		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/harryhedger/sites/sces/package.json",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Future Funk (Gray Tuesday).tmTheme",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/messaging.js",
-		"/Users/harryhedger/sites/sces/code/js/requireConfig.js",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Installed Packages/Theme - Spacefunk.sublime-package",
 		"/Users/harryhedger/sites/sces/code/js/modules/content/plangular.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/template.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/contentHandlers.js",
 		"/Users/harryhedger/sites/sces/code/html/templates/auth.html",
-		"/Users/harryhedger/sites/sces/code/js/lib/lodash.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/util/lodash.js",
 		"/Users/harryhedger/sites/sces/code/js/lib/underscore.js",
 		"/Users/harryhedger/sites/sces/code/js/lib/README.md",
-		"/Users/harryhedger/sites/sces/code/manifest.json",
-		"/Users/harryhedger/sites/sces/code/js/modules/backgroundSoundcloud.js",
-		"/Users/harryhedger/sites/sces/code/html/application.html",
-		"/Users/harryhedger/sites/sces/code/html/background.html",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular.js",
 		"/Users/harryhedger/sites/sces/tests/lib/angular/angular-scenario.js",
 		"/Users/harryhedger/sites/sces/tests/pure-unit/modules/requireConfig.js",
-		"/Users/harryhedger/sites/sces/code/js/backgroundAngular.js",
-		"/Users/harryhedger/sites/sces/code/js/background.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/content/ng-waveform.js",
 		"/Users/harryhedger/sites/sces/tests/unit/controllersSpec.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/config.js",
 		"/Users/harryhedger/Documents/example.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/content/contentFilters.js",
-		"/Users/harryhedger/sites/sces/code/js/following_content.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/seaApp.js",
-		"/Users/harryhedger/sites/sces/code/js/stream_content.js",
 		"/Users/harryhedger/sites/angular-client-side-auth/client/js/app.js",
 		"/Users/harryhedger/sites/angular-client-side-auth/client/js/controllers.js",
 		"/Users/harryhedger/sites/sces/code/html/templates/filters.html",
 		"/Users/harryhedger/sites/sces/code/html/templates/groups.html",
-		"/Users/harryhedger/sites/sces/code/html/templates/stream.html",
 		"/Users/harryhedger/sites/sces/code/js/modules/background/controllers.js",
 		"/Users/harryhedger/sites/sces/tests/README.md",
 		"/Users/harryhedger/sites/sces/tests/main-test.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/backgroundHandlers.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/jquery.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/staticConfig.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/background/routes.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/url.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/content/userids",
 		"/Users/harryhedger/sites/sces/code/js/modules/background/controllers/authController.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/util/db.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/content/contentServicesNew.js",
 		"/Users/harryhedger/Documents/solution",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/Users/harryhedger/sites/sces/code/js/modules/bgSoundcloud.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/util/urlHandler.js",
 		"/Users/harryhedger/sites/sces/code/html/templates/popup.html",
@@ -225,49 +235,7 @@
 		"/Users/harryhedger/soundcloud-chrome-app/code/js/modules/content/ng-waveform.js",
 		"/Users/harryhedger/soundcloud-chrome-app/code/js/modules/content/contentServices.js",
 		"/Users/harryhedger/soundcloud-chrome-app/code/html/application.html",
-		"/Users/harryhedger/soundcloud-chrome-app/code/css/bootstrap.css",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Atom Dark (SL).tmTheme",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/background.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/html/templates/options.html",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Snappy (SL).tmTheme",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Afterglow-monokai (SL).tmTheme",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/3024_Day (SL).tmTheme",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/requireConfig.js",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Colorsublime.sublime-settings",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/backgroundAngular.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/html/templates/filters.html",
-		"/Users/harryhedger/Downloads/initializr/index.html",
-		"/Users/harryhedger/sites/cv/index.html",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/lib/waveform.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/manifest.json",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/modules/content/contentApp.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/html/templates/asdf",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/modules/content/plangular.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/modules/background/controllers.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/lib/async.js",
-		"/Users/harryhedger/soundcloud-chrome-app/code/js/player.html",
-		"/Users/harryhedger/Desktop/sdk-2.0.0.js",
-		"/Users/harryhedger/vanilla/code/js/modules/content/controllers/contentctrl.js",
-		"/Users/harryhedger/vanilla/code/html/templates/popup.html",
-		"/Users/harryhedger/vanilla/code/html/templates/stream.html",
-		"/Users/harryhedger/vanilla/code/js/modules/content/contentControllers.js",
-		"/Users/harryhedger/vanilla/code/js/requireContent.js",
-		"/Users/harryhedger/vanilla/code/js/modules/content/contentApp.js",
-		"/Users/harryhedger/vanilla/code/html/templates/filters.html",
-		"/Users/harryhedger/vanilla/code/js/content.js",
-		"/Users/harryhedger/vanilla/code/js/modules/content/contentServices.js",
-		"/Users/harryhedger/vanilla/code/manifest.json",
-		"/Users/harryhedger/vanilla/code/html/templates/groups.html",
-		"/Users/harryhedger/vanilla/code/html/templates/content.html",
-		"/Users/harryhedger/Desktop/chrome-extension-skeleton-ng-develop/code/html/templates/content.html",
-		"/Users/harryhedger/Desktop/chrome-extension-skeleton-ng-develop/code/js/content.js",
-		"/Users/harryhedger/Downloads/chrome-extension-skeleton-ng-develop 2/code/js/content.js",
-		"/Users/harryhedger/chrome-extension-skeleton-ng-develop/code/manifest.json",
-		"/Users/harryhedger/Downloads/chrome-extension-skeleton-ng-develop 2/code/html/templates/content.html",
-		"/Users/harryhedger/chrome-extension-skeleton-ng-develop/code/js/modules/content/contentControllers.js",
-		"/Users/harryhedger/sites/mean/public/auth/controllers/auth.js",
-		"/Users/harryhedger/sites/soundcloud-app/public/js/services/global.js",
-		"/Users/harryhedger/sites/soundcloud-app/public/js/controllers.js"
+		"/Users/harryhedger/soundcloud-chrome-app/code/css/bootstrap.css"
 	],
 	"find":
 	{
@@ -303,6 +271,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.log",
+			"4",
+			"indent",
+			"backgroundHandler",
 			"stream_item.track.",
 			"console.log",
 			"fetchr",
@@ -407,634 +379,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "code/html/templates/stream.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 357,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "code/js/modules/content/contentDirectives.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1638,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								297,
-								297
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"open_with_edit": true,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "code/js/modules/content/contentControllers.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2087,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "code/js/modules/content/contentServices.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4414,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1126,7 +472,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 200.0,
+	"side_bar_width": 224.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

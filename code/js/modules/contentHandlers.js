@@ -1,4 +1,4 @@
-define({
+/*define({
 
   // Handler prototype:
   // function handle<REQUEST.CMD>(args, sender, sendResponse)
@@ -11,5 +11,6 @@ define({
     sendResponse({});
   }
   */
-
+/*
 });
+*/

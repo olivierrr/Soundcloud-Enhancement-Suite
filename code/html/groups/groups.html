@@ -1,0 +1,35 @@
+<div ng-app="SESApp" ng-csp="">
+<div class="span4 " id="contentDiv" ng-controller="GroupController">
+
+
+<article class="sidebarModule sc-border-light-bottom g-all-transitions-200-linear" style="">
+    <a class="sidebarHeader sc-clearfix sc-link-light outgoing-stats-module" href="/you/stats">
+        <h3 class="sidebarHeader__title sc-type-light">
+            <span class="sc-icon profileMenu__groups sc-icon-large sidebarHeader__icon"></span>
+            <span class="sidebarHeader__actualTitle">Stream Groups</span>
+        </h3>
+        <span class="sidebarHeader__more sc-type-h3">View all</span>
+    </a>
+    <div class="sidebarContent" style="min-height: 103px;">
+        <div class="statsBadge sc-border-light-top">
+            <table class="statsBadge__recent sc-type-small">
+                <tbody>
+                    <tr>
+    <ul>
+        <li ng-repeat="group in groups"><a href ng-click="setActiveGroup(group)">{{group.name}}</a>
+        </li>
+    </ul>
+                    </tr>
+                    <tr>
+                        <td class="statsBadge__today sc-orange statsBadge__value sc-border-light-right"><button class="sc-button sc-button-small sc-button-responsive sc-button-addtoset" tabindex="0" title="Add to playlist">Edit Groups</button></td>
+                        <td class="statsBadge__value sc-text-verylight"><button class="sc-button sc-button-small sc-button-responsive sc-button-addtoset" tabindex="0" title="Add to playlist">New Stream Group</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</article>
+</div>
+</div>

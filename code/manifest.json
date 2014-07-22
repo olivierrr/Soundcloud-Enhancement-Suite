@@ -1,59 +1,65 @@
 {
-  "name": "Soundcloud Enhancement Suite",
-  "version": "0.1.0",
-  "manifest_version": 2,
-  "description": "Soundcloud Enhancement Suite",
-  "icons": {
-    "48": "images/icon.png"
-  },
-  "browser_action": {
-    "default_icon": "images/icon.png",
-    "default_title": "Extension action"
-  },
-
-  "background": {
-    "page": "html/background.html"
-  },
-  "options_page": "html/application.html#/options",
-  "permissions": [
-    "storage",
-    "identity",
-    "webRequest",
-    "webRequestBlocking",
-    "tabs",
-    "https://api.soundcloud.com/",
-    "https://www.waveformjs.org/",
-    "https://*.sndcdn.com/",
-    "https://www.soundcloud.com/*"
-  ],
-  "web_accessible_resources": [
-    "js/*",
-    "html/*",
-    "css/*",
-    "images/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["https://soundcloud.com/stream"],
-      "js": [
-        "js/lib/require.js",
-        "js/lib/jquery.js",
-        "js/lib/waveform.js",
-        "js/requireContent.js",
-        "js/requireConfig.js",
-        "js/stream_content.js"
-      ]
+    "name": "Soundcloud Enhancement Suite",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "description": "Soundcloud Enhancement Suite adds new features to the Soundcloud website.",
+    "icons": {
+        "48": "img/icon.png"
     },
-    {
-      "matches": ["https://soundcloud.com/*/following"],
-      "js": [
-        "js/lib/require.js",
-        "js/lib/jquery.js",
-        "js/requireContent.js",
-        "js/requireConfig.js",
-        "js/following_content.js"
-      ]
-    }
-  ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_title": "Soundcloud Enhancement Suite"
+    },
+
+    "background": {
+        "page": "html/background/background.html"
+    },
+    "options_page": "html/background/options.html",
+    "permissions": [
+        "identity",
+        "storage",
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "https://*.soundcloud.com/*",
+        "https://*.sndcdn.com/"
+    ],
+    "web_accessible_resources": [
+        "js/*",
+        "html/*",
+        "css/*",
+        "img/*"
+    ],
+    "content_scripts": [{
+        "matches": ["https://soundcloud.com/stream"],
+        "js": [
+            "js/lib/angular/angular.min.js",
+            "js/lib/waveform.js",
+            "js/app/controllers/followingController.js",
+            "js/app/controllers/groupController.js",
+            "js/app/controllers/streamController.js",
+            "js/app/contentServices.js",
+            "js/app/contentDirectives.js",
+            "js/app/plangular.js",
+            "js/app/ng-waveform.js",
+            "js/scripts/streamContent.js",
+            "js/app/app.js"
+        ]
+    }, {
+        "matches": ["https://soundcloud.com/*/following"],
+        "js": [
+            "js/lib/angular/angular.min.js",
+            "js/lib/waveform.js",
+            "js/app/app.js",
+            "js/app/controllers/followingController.js",
+            "js/app/controllers/groupController.js",
+            "js/app/controllers/streamController.js",
+            "js/app/contentServices.js",
+            "js/app/contentDirectives.js",
+            "js/app/plangular.js",
+            "js/app/ng-waveform.js",
+            "js/scripts/followingContent.js"
+        ]
+    }],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

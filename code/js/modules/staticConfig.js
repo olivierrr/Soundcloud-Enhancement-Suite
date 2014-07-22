@@ -1,4 +1,4 @@
-//
+/*//
 // static strings and values for application
 // extension config consts of two parts:
 //  - static config (some strings, consts) which never changed
@@ -62,3 +62,4 @@ define({
     popup: '/popup'
   }
 });
+*/

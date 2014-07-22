@@ -1,4 +1,4 @@
-define(['staticConfig', 'lib/q'], function(sc, Q) {
+var configSerializer = function() {
   return {
     Get: function() {
       var deferred = Q.defer();
@@ -23,4 +23,4 @@ define(['staticConfig', 'lib/q'], function(sc, Q) {
       return deferred.promise;
     }
   };
-});
+}();

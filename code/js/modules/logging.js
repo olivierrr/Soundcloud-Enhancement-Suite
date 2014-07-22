@@ -1,4 +1,4 @@
-// module for logging
+/*// module for logging
 // from options/popup and bg pages to one bg page
 define([], function() {
   var log = function(isContentModule, _moduleName, _client) {
@@ -63,3 +63,4 @@ define([], function() {
 
   return log;
 });
+*/
