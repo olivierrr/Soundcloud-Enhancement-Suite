@@ -2,31 +2,49 @@
  * Content script for the Soundcloud Following page.
  */
 (function() {
+    // select the target node
+    var target = document.querySelector('body');
 
-    // replace the user list with the following template
-    document.onreadystatechange = function() {
-        if (document.readyState === "complete") {
+    // create an observer instance
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
 
-            var contentDiv = document.querySelector('.usersList');
-            var parentDiv = document.querySelector('.g-main-scroll-area');
+            if (document.querySelector('.usersList')) {
 
-            parentDiv.removeChild(contentDiv);
+                observer.disconnect();
 
-            chrome.runtime.sendMessage({
-                template: 'groups/groups'
-            }, function(response) {
-                var newDiv = document.createElement('div');
-                newDiv.innerHTML = response;
-                parentDiv.insertBefore(newDiv, parentDiv.childNodes[0]);
-            });
+                var content = document.querySelector('.usersList');
+                var parent = document.querySelector('.g-main-scroll-area');
 
-            // angular needs to be bootstrapped manually
-            var angularDiv = document.querySelector('body');
+                parent.removeChild(content);
 
-            /*angularDiv.classList.add('ng-app');
-            angularDiv.classList.add('ng-csp');
-            console.log(angular.bootstrap(angularDiv, ['SESApp']));*/
+                chrome.runtime.sendMessage({
+                        template: 'following/following'
+                    },
+                    function(response) {
 
-        }
+                        var template = document.createElement('div');
+                        template.innerHTML = response;
+                        parent.insertBefore(template, parent.childNodes[0]);
+
+                        // angular needs to be bootstrapped manually
+                        var angularDiv = document.querySelector('body');
+
+                        angularDiv.classList.add('ng-app');
+                        angularDiv.classList.add('ng-csp');
+                        angular.bootstrap(angularDiv, ['SESApp']);
+                    });
+            }
+        });
+    });
+
+    // configuration of the observer:
+    var config = {
+        attributes: true,
+        childList: true,
+        characterData: true
     };
+
+    // pass in the target node, as well as the observer options
+    observer.observe(target, config);
 }());

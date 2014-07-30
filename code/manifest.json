@@ -32,32 +32,57 @@
     ],
     "content_scripts": [{
         "matches": ["https://soundcloud.com/stream"],
+        "css": [
+            "css/bootstrap.css",
+            "css/style.css"
+        ],
         "js": [
-            "js/lib/angular/angular.min.js",
+            // angular and ui-bootstrap
+            "js/lib/angular/angular.js",
+            "js/lib/bootstrap.js",
+            "js/lib/ui-bootstrap-tpls-0.11.0.js",
+            // waveform.js Library
             "js/lib/waveform.js",
-            "js/app/controllers/followingController.js",
+            "js/lib/waveformer.js",
+            // app
+            "js/app/app.js",
+            // controllers
+            "js/app/controllers/modalInstanceController.js",
             "js/app/controllers/groupController.js",
             "js/app/controllers/streamController.js",
-            "js/app/contentServices.js",
-            "js/app/contentDirectives.js",
-            "js/app/plangular.js",
-            "js/app/ng-waveform.js",
-            "js/scripts/streamContent.js",
-            "js/app/app.js"
+            // services
+            "js/app/services/modal.js",
+            "js/app/services/groups.js",
+            "js/app/services/soundcloud.js",
+            "js/app/services/streamService.js",
+            "js/app/services/followingService.js",
+            // directives
+            "js/app/directives/streamItem.js",
+            "js/app/directives/plangular.js",
+            "js/app/directives/waveform.js",
+            // content script
+            "js/scripts/streamContent.js"
         ]
     }, {
         "matches": ["https://soundcloud.com/*/following"],
+        "css": [
+            "css/bootstrap.css",
+            "css/style.css"
+            ],
         "js": [
-            "js/lib/angular/angular.min.js",
+            "js/lib/angular/angular.js",
+            "js/lib/ui-bootstrap-tpls-0.11.0.js",
             "js/lib/waveform.js",
             "js/app/app.js",
+            "js/app/services/modal.js",
+            "js/app/services/groups.js",
+            "js/app/services/soundcloud.js",
+            "js/app/services/streamService.js",
+            // controllers
+            "js/app/controllers/modalInstanceController.js",
             "js/app/controllers/followingController.js",
             "js/app/controllers/groupController.js",
             "js/app/controllers/streamController.js",
-            "js/app/contentServices.js",
-            "js/app/contentDirectives.js",
-            "js/app/plangular.js",
-            "js/app/ng-waveform.js",
             "js/scripts/followingContent.js"
         ]
     }],

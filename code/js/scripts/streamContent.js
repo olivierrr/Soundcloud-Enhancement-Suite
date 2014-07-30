@@ -2,43 +2,61 @@
  * Content script for the Soundcloud Stream page.
  */
 (function() {
+    // select the target node
+    var target = document.querySelector('body');
 
-    document.onreadystatechange = function() {
-        if (document.readyState === "complete") {
+    // create an observer instance
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
 
-            // replace the regular stream with our stream template
-            var stream = document.querySelector('.stream');
-            var streamList = document.querySelector('.stream__list');
-            var streamSidebar = document.querySelector('.streamSidebar');
+            if (document.querySelector('.stream__list') && document.querySelector('.streamSidebar')) {
 
-            stream.removeChild(streamList);
+                observer.disconnect();
+                // replace the regular stream with our stream template
+                var stream = document.querySelector('.stream'),
+                    streamList = document.querySelector('.stream__list'),
+                    streamSidebar = document.querySelector('.streamSidebar');
 
-            // get the template
-            chrome.runtime.sendMessage({
-                template: 'stream/stream'
-            }, function(response) {
+                stream.removeChild(streamList);
 
-                // insert the template
-                var newDiv = document.createElement('div');
-                newDiv.innerHTML = response;
-                stream.insertBefore(newDiv, stream.childNodes[0]);
-            });
+                // get the template
+                chrome.runtime.sendMessage({
+                    template: 'stream/stream'
+                }, function(response) {
 
-            // add group list to the sidebar
-            chrome.runtime.sendMessage({
-                template: 'groups/groups'
-            }, function(response) {
-                //console.log(response);
-                var newDiv = document.createElement('div');
-                newDiv.innerHTML = response;
-                streamSidebar.insertBefore(newDiv, streamSidebar.childNodes[0]);
+                    // insert the template
+                    var newDiv = document.createElement('div');
+                    newDiv.innerHTML = response;
+                    stream.insertBefore(newDiv, stream.childNodes[0]);
+                });
 
-                var contentDiv = document.querySelector('#content');
-                // angular needs to be bootstrapped manually
-                contentDiv.classList.add('ng-app');
-                contentDiv.classList.add('ng-csp');
-                angular.bootstrap(contentDiv, ['SESApp']);
-            });
-        }
-    };
+                // add group list to the sidebar
+                chrome.runtime.sendMessage({
+                    template: 'groups/groups'
+                }, function(response) {
+                    //console.log(response);
+                    var newDiv = document.createElement('div');
+                    newDiv.innerHTML = response;
+                    streamSidebar.insertBefore(newDiv, streamSidebar.childNodes[0]);
+
+                    var contentDiv = document.querySelector('#content');
+                    // angular needs to be bootstrapped manually
+                    contentDiv.classList.add('ng-app');
+                    contentDiv.classList.add('ng-csp');
+                    console.log("Beep");
+                    angular.bootstrap(contentDiv, ['SESApp']);
+                });
+            }
+        });
+    });
+
+    // configuration of the observer:
+    var config = {
+        attributes: true,
+        childList: true,
+        characterData: true
+    }
+
+    // pass in the target node, as well as the observer options
+    observer.observe(target, config);
 }());

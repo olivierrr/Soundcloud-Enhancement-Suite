@@ -60,10 +60,10 @@
         <!-- Waveform -->
         <div class="sound__body">
 
-            <div class="sound__waveform">
-                <div ng-waveform src="{{item.waveform_url}}" width="683" height="60" innercolor="#444444"></div>
-                <div class="commentPlaceholder g-z-index-content">
-                    <div class="commentPlaceholder__avatar">
+            <div class="sound__waveform" ng-click="player.play(item)">
+                <div waveform src="{{item.waveform_url}}" width="683" height="60" innercolor="#444444"></div>
+<!--                 <div class="commentPlaceholder g-z-index-content">
+                    <div class="commentPlaceholder__avatar"> -->
                       <!--  <img aria-hidden="true" src="https://i1.sndcdn.com/avatars-000078152969-fmhpwn-t20x20.jpg?30a2558" class="" width="20" height="20"> -->
                     </div>
                 </div>

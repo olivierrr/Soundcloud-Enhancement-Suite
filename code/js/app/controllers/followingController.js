@@ -6,6 +6,11 @@ angular.module('SESApp')
     .controller('FollowingController', ['$scope', '$location', '$q', '$timeout', 'Soundcloud',
             function($scope, $location, $q, $timeout, Soundcloud) {
 
+                Soundcloud.resolve({ url: '' })
+                .then(function(result) {
+                    console.log(result);
+
+                });
                 $scope.getList = function(letter) {
                     $scope.follow = list[letters];
                 };

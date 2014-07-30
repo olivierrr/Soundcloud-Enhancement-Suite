@@ -79,6 +79,9 @@
         this.context.fillRect(t * i, middle - middle * d, t, middle * d * 2);
         _results.push(i++);
       }
+/*      console.log(this);
+      console.log(this.context);
+      console.log(_results);*/
       return _results;
     };
 

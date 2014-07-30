@@ -7,10 +7,10 @@
 
  */
 
-var plangular = angular.module('SESApp', []),
-    clientID = '0d33361983f16d2527b01fbf6408b7d7';
-
-plangular.directive('plangular', function($document, $rootScope, $http) {
+var clientID = '0d33361983f16d2527b01fbf6408b7d7';
+var plangular = angular.module('SESApp');
+plangular
+.directive('plangular', function($document, $rootScope, $http) {
     // Define the audio engine
     var audio = $document[0].createElement('audio');
 

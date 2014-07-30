@@ -1,10 +1,9 @@
 /**
  * Controller for the stream view
  */
-
 angular.module('SESApp')
-    .controller('GroupController', ['$scope', '$rootScope', '$location', '$http', 'Groups',
-        function($scope, $rootScope, $location, $http, Groups) {
+    .controller('GroupController', ['$scope', '$rootScope', '$location', '$http', 'Groups', '$log', 'modal',
+        function($scope, $rootScope, $location, $http, Groups, $log, modal) {
 
             (function getGroups() {
                 $scope.groups = Groups.all();
@@ -19,5 +18,14 @@ angular.module('SESApp')
                 }
             };
 
+  $scope.open = function(size) {
+    modal.open(size);
+  }/*
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };*/
         }
     ]);
