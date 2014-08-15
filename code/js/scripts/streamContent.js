@@ -34,16 +34,17 @@
                 chrome.runtime.sendMessage({
                     template: 'groups/groups'
                 }, function(response) {
-                    //console.log(response);
+
+                    // create an element for our template
                     var newDiv = document.createElement('div');
                     newDiv.innerHTML = response;
                     streamSidebar.insertBefore(newDiv, streamSidebar.childNodes[0]);
 
-                    var contentDiv = document.querySelector('#content');
-                    // angular needs to be bootstrapped manually
+                    var contentDiv = document.querySelector('.l-fluid-fixed');
+
+                    // angular needs to be bootstrapped manually to work in chrome extensions
                     contentDiv.classList.add('ng-app');
                     contentDiv.classList.add('ng-csp');
-                    console.log("Beep");
                     angular.bootstrap(contentDiv, ['SESApp']);
                 });
             }

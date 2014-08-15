@@ -12,7 +12,7 @@ var template = function() {
                 r.send();
                 _cache[target] = r.responseText;
             }
-            console.log(_cache[target]);
+
             return _cache[target];
         }
     };

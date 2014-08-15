@@ -20,6 +20,7 @@
         "storage",
         "tabs",
         "webRequest",
+        "webNavigation",
         "webRequestBlocking",
         "https://*.soundcloud.com/*",
         "https://*.sndcdn.com/"

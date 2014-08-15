@@ -2,13 +2,14 @@
  * Content script for the Soundcloud Following page.
  */
 (function() {
+    console.log("Stream Content Script Executed");
     // select the target node
     var target = document.querySelector('body');
 
     // create an observer instance
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-
+            console.log('Mutation Detected');
             if (document.querySelector('.usersList')) {
 
                 observer.disconnect();
@@ -23,13 +24,14 @@
                     },
                     function(response) {
 
+                        // create an element for our template
                         var template = document.createElement('div');
                         template.innerHTML = response;
                         parent.insertBefore(template, parent.childNodes[0]);
 
-                        // angular needs to be bootstrapped manually
-                        var angularDiv = document.querySelector('body');
+                        var angularDiv = document.querySelector('.abcdefg');
 
+                        // angular needs to be bootstrapped manually to work in chrome extensions
                         angularDiv.classList.add('ng-app');
                         angularDiv.classList.add('ng-csp');
                         angular.bootstrap(angularDiv, ['SESApp']);

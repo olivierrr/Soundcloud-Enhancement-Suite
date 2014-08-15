@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"length1",
+				"length1"
+			]
 		]
 	},
 	"buffers":
@@ -11,13 +15,9 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 327.0,
 		"selected_items":
 		[
-			[
-				"prett",
-				"HTMLPrettify"
-			],
 			[
 				"prettif",
 				"HTMLPrettify"
@@ -27,12 +27,16 @@
 				"HTMLPrettify"
 			],
 			[
-				"pretti",
+				"pret",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"prett",
 				"HTMLPrettify"
 			],
 			[
-				"pret",
-				"HTMLPrettify: Set Prettify Preferences"
+				"pretti",
+				"HTMLPrettify"
 			],
 			[
 				"package",
@@ -87,7 +91,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 610.0
+		"width": 608.0
 	},
 	"console":
 	{
@@ -108,37 +112,97 @@
 	},
 	"file_history":
 	[
-		"/Users/harryhedger/sites/sces/code/js/app/services/following.js",
-		"/Users/harryhedger/sites/sces/code/js/app/services/modal.js",
-		"/Users/harryhedger/sites/sces/code/manifest.json",
-		"/Users/harryhedger/sites/sces/code/js/scripts/followingContent.js",
 		"/Users/harryhedger/sites/sces/code/js/app/controllers/followingController.js",
+		"/Users/harryhedger/sites/sces/code/js/app/services/followingService.js",
 		"/Users/harryhedger/sites/sces/code/js/app/services/soundcloud.js",
-		"/Users/harryhedger/sites/sces/code/html/following/following.html",
+		"/Users/harryhedger/sites/sces/code/js/app/services/streamService.js",
 		"/Users/harryhedger/sites/sces/code/html/groups/partials/modal.html",
-		"/Users/harryhedger/sites/sces/code/js/app/services/groups.js",
+		"/Users/harryhedger/sites/sces/code/js/scripts/streamContent.js",
 		"/Users/harryhedger/sites/sces/code/js/app/controllers/groupController.js",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/modalInstanceController.js",
 		"/Users/harryhedger/sites/sces/code/js/app/controllers/streamController.js",
+		"/Users/harryhedger/sites/sces/code/js/app/services/modal.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/followController.js",
+		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/streamController.js",
+		"/Users/harryhedger/sites/myportfolio/style.css",
+		"/Users/harryhedger/sites/myportfolio/index.html",
+		"/Users/harryhedger/sites/Books/CSS/CSS - The Definitive Guide, 3rd Edition.chm",
+		"/Users/harryhedger/Downloads/Coolshit/zmoazeni-csscss-d88a744/README.md",
+		"/Users/harryhedger/sites/mean/node_modules/grunt-nodemon/node_modules/nodemon/tmp/express-boilerplate/node_modules/grunt-contrib-watch/node_modules/gaze/test/fixtures/nested/three.js",
+		"/Users/harryhedger/sites/ghost/node_modules/grunt-contrib-watch/node_modules/gaze/test/fixtures/nested/three.js",
+		"/Users/harryhedger/sites/s/node_modules/grunt-contrib-watch/node_modules/gaze/test/fixtures/nested/three.js",
+		"/Users/harryhedger/sites/invisible-sound/node_modules/grunt-contrib-watch/node_modules/gaze/test/fixtures/nested/three.js",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/style.css",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/layouts/content-sidebar.css",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/layouts/sidebar-content.css",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/front-page.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/sidebar.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/header.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-includes/default-widgets.php",
+		"/Users/harryhedger/Downloads/social-feed/SocialFeed_Plugin.php",
+		"/Users/harryhedger/Downloads/CreativeLinkEffects/css/component.css",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/archive.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/single.php",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/content.php",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/page.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/content-none.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/content-page.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/content-single.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/comments.php",
+		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/index.php",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/blank.php",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/content-page.php",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/single.php",
+		"/Users/harryhedger/sites/casablanca/wp-content/themes/casablanca/style.css",
+		"/Users/harryhedger/Downloads/CreativeLinkEffects/css/demo.css",
+		"/Users/harryhedger/sites/canvas/chapter 2/app.js",
+		"/Users/harryhedger/sites/canvas/chapter 2/index.html",
+		"/Users/harryhedger/sites/mergesort/mergesort.c",
+		"/Users/harryhedger/sites/canvas/letterGuess/index.html",
+		"/Users/harryhedger/sites/whois/app.js",
+		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/Users/harryhedger/sites/css/slider.html",
+		"/Users/harryhedger/sites/particle/index.html",
+		"/Users/harryhedger/sites/particle/style.css",
+		"/Users/harryhedger/sites/particle/app.js",
+		"/Users/harryhedger/sites/Loop-Waveform-Visualizer/index.html",
+		"/Users/harryhedger/sites/Loop-Waveform-Visualizer/index.js",
+		"/Users/harryhedger/sites/css/slider/index.html",
+		"/Users/harryhedger/sites/css/slider/style.css",
+		"/Users/harryhedger/sites/sprinkler/ARCToolsv2.1.2/examples/LogicalCC.asm",
+		"/Users/harryhedger/sites/sprinkler/ARCToolsv2.1.2/examples/IOExamples/typewriter.asm",
+		"/Users/harryhedger/sites/sprinkler/ARCToolsv2.1.2/examples/IOExamples/printHelloWorld.asm",
+		"/Users/harryhedger/sites/sprinkler/ARCToolsv2.1.2/examples/branch.asm",
+		"/Users/harryhedger/sites/sprinkler/ARCToolsv2.1.2/examples/addtest.asm",
+		"/Users/harryhedger/sites/sprinkler/sprinkler.c",
+		"/Users/harryhedger/sites/css/style.css",
+		"/Users/harryhedger/sites/sces/code/js/util/template.js",
+		"/Users/harryhedger/sites/sprinkler/sprinkler.s",
+		"/Users/harryhedger/sites/sprinkler/ARCToolsv2.1.2/examples/arc2.asm",
+		"/Users/harryhedger/sites/sprinkler/arcgnu/arceb-elf32/bin/sprinkler.s",
+		"/Users/harryhedger/sites/css/app.js",
+		"/Users/harryhedger/sites/sces/code/js/app/services/groups.js",
+		"/Users/harryhedger/sites/sces/code/html/groups/groups.html",
+		"/Users/harryhedger/sites/sces/code/manifest.json",
+		"/Users/harryhedger/sites/sces/code/js/lib/waveform.js",
+		"/Users/harryhedger/sites/sces/code/js/app/directives/plangular.js",
+		"/Users/harryhedger/sites/sces/code/js/app/directives/waveform.js",
+		"/Users/harryhedger/sites/sces/code/wavey.js",
+		"/Users/harryhedger/sites/sces/code/js/app/modal.html",
+		"/Users/harryhedger/sites/sces/code/js/app/services/following.js",
+		"/Users/harryhedger/sites/sces/code/js/scripts/followingContent.js",
+		"/Users/harryhedger/sites/sces/code/html/following/following.html",
 		"/Users/harryhedger/sites/sces/code/js/app/directives/streamItem.js",
 		"/Users/harryhedger/sites/sces/code/html/stream/partials/track.html",
 		"/Users/harryhedger/sites/sces/code/html/stream/stream.html",
-		"/Users/harryhedger/sites/sces/code/html/groups/groups.html",
-		"/Users/harryhedger/sites/sces/code/js/lib/waveform.js",
-		"/Users/harryhedger/sites/sces/code/js/app/directives/waveform.js",
 		"/Users/harryhedger/sites/sces/code/css/style.css",
-		"/Users/harryhedger/sites/sprinkler/sprinkler.c",
-		"/Users/harryhedger/sites/sces/code/js/app/services/streamService.js",
 		"/Users/harryhedger/sites/sces/code/js/background.js",
-		"/Users/harryhedger/sites/sces/code/js/util/template.js",
 		"/Users/harryhedger/sites/sces/code/js/app/app.js",
-		"/Users/harryhedger/sites/sces/code/js/app/controllers/modalInstanceController.js",
 		"/Users/harryhedger/sites/sces/code/js/app/directives/modalDialog.js",
 		"/Users/harryhedger/sites/sces/code/html/util/modal.html",
 		"/Users/harryhedger/sites/sces/code/package.json",
-		"/Users/harryhedger/sites/sces/code/js/scripts/streamContent.js",
 		"/Users/harryhedger/sites/sces/code/js/lib/ui-bootstrap-tpls-0.11.0.js",
 		"/Users/harryhedger/sites/sces/code/html/stream/partials/random.html",
-		"/Users/harryhedger/sites/sces/code/js/app/directives/plangular.js",
 		"/Users/harryhedger/sites/poop/index.js",
 		"/Users/harryhedger/sites/sces/code/js/app/contentFilters.js",
 		"/Users/harryhedger/sites/sces/code/js/modules/backgroundHandlers.js",
@@ -175,67 +239,7 @@
 		"/Users/harryhedger/sites/sces/code/html/background/options.html",
 		"/Users/harryhedger/sites/sces/code/js/stream_content.js",
 		"/Users/harryhedger/sites/sces/code/js/following_content.js",
-		"/Users/harryhedger/sites/sces/code/html/background.html",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/messagingClient.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/template.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/lodash.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-resource.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/seaApp.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/messaging.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-sanitize.min.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-loader.min.js",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/Users/harryhedger/sites/sces/code/js/lib/jquery.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-cookies.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular-resource.min.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/angular/angular.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/followController.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/contentControllers.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/contentDirectives.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/streamController.js",
-		"/Users/harryhedger/sites/sces/package.json",
-		"/Users/harryhedger/sites/sces/code/json_guide",
-		"/Users/harryhedger/sites/sces/code/index.js",
-		"/Users/harryhedger/sites/sces/code/js/backgroundAngular.js",
-		"/Users/harryhedger/sites/sces/code/js/requireConfig.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/url.js",
-		"/Users/harryhedger/sites/sces/code/html/application.html",
-		"/Users/harryhedger/sites/sces/code/html/likes/likes.html",
-		"/Users/harryhedger/sites/sces/code/css/bootstrap.css",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/contentServices.js",
-		"/Users/harryhedger/sites/sces/code/html/templates/stream.html",
-		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/header.php",
-		"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca/style.css",
-		"/Users/harryhedger/Downloads/ghost-0.4.2/README.md",
-		"/Users/harryhedger/sites/sces/code/js/lib/require.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/controllers/groupController.js",
-		"/Users/harryhedger/Downloads/project/demo",
-		"/Users/harryhedger/Downloads/project (1)/main.asm",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Packages/User/Future Funk (Gray Tuesday).tmTheme",
-		"/Users/harryhedger/Library/Application Support/Sublime Text 3/Installed Packages/Theme - Spacefunk.sublime-package",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/plangular.js",
-		"/Users/harryhedger/sites/sces/code/html/templates/auth.html",
-		"/Users/harryhedger/sites/sces/code/js/modules/util/lodash.js",
-		"/Users/harryhedger/sites/sces/code/js/lib/underscore.js",
-		"/Users/harryhedger/sites/sces/tests/lib/angular/angular-scenario.js",
-		"/Users/harryhedger/sites/sces/tests/pure-unit/modules/requireConfig.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/ng-waveform.js",
-		"/Users/harryhedger/sites/sces/tests/unit/controllersSpec.js",
-		"/Users/harryhedger/Documents/example.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/contentFilters.js",
-		"/Users/harryhedger/sites/angular-client-side-auth/client/js/app.js",
-		"/Users/harryhedger/sites/angular-client-side-auth/client/js/controllers.js",
-		"/Users/harryhedger/sites/sces/code/html/templates/filters.html",
-		"/Users/harryhedger/sites/sces/code/html/templates/groups.html",
-		"/Users/harryhedger/sites/sces/code/js/modules/background/controllers.js",
-		"/Users/harryhedger/sites/sces/tests/README.md",
-		"/Users/harryhedger/sites/sces/tests/main-test.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/background/routes.js",
-		"/Users/harryhedger/sites/sces/code/js/modules/content/userids",
-		"/Users/harryhedger/sites/sces/code/js/modules/background/controllers/authController.js"
+		"/Users/harryhedger/sites/sces/code/html/background.html"
 	],
 	"find":
 	{
@@ -246,6 +250,8 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Applications/MAMP/htdocs/wordpress/",
+			"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca",
 			"",
 			"/Users/harryhedger/sites/sces/",
 			"/Users/harryhedger/sites/sces/code/js/modules",
@@ -271,6 +277,55 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"margin",
+			"left",
+			"recent comments",
+			"recent",
+			"Comments",
+			"Recent Comments",
+			"recent",
+			"Recent",
+			"doesn't",
+			"hover",
+			"frequency",
+			"printarray",
+			"print",
+			"L_.str",
+			"116",
+			".hover",
+			"new-label",
+			"hover",
+			"jquery",
+			"height",
+			"f",
+			"p",
+			"T",
+			"S",
+			"s",
+			"d",
+			"k",
+			"x",
+			"t",
+			"v",
+			"_",
+			"r.",
+			"r",
+			"c.",
+			"c",
+			"g",
+			"m",
+			"w",
+			"h",
+			"p",
+			"d",
+			"r",
+			"u",
+			"a",
+			"c",
+			"r.",
+			"a.",
+			"l.",
+			"c.",
 			"getFollowingList",
 			"console",
 			"singleAttack",
@@ -349,13 +404,7 @@
 			"console",
 			"track",
 			"background",
-			"tab",
-			"side",
-			"theme",
-			"datafrom",
-			"underscore",
-			"$scope",
-			"}"
+			"tab"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -394,7 +443,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -434,7 +483,7 @@
 	"project": "sces.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -480,7 +529,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 224.0,
+	"side_bar_width": 166.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
