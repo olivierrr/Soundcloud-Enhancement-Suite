@@ -2,6 +2,8 @@
 
     /* Group Factory Service */
     .factory('Groups', function() {
+
+        /** HARD CODED GROUPS FOR DEV ONLY **/
         var groups = [{
             name: 'None',
             artists: []
@@ -16,9 +18,9 @@
             artists: [1520490, 92661, 188783]
         }];
 
+        // this will be how we retrieve the custom streams once they are implemented
         chrome.storage.sync.set({'groups': groups}, function(){
         chrome.storage.sync.get("groups", function(obj) {
-            console.log(obj);
         });});
 
         var activeGroup = [];

@@ -2,18 +2,17 @@
  * Content script for the Soundcloud Following page.
  */
 (function() {
-    console.log("Stream Content Script Executed");
     // select the target node
     var target = document.querySelector('body');
 
     // create an observer instance
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-            console.log('Mutation Detected');
             if (document.querySelector('.usersList')) {
 
                 observer.disconnect();
 
+                // content div will be replaced by our content
                 var content = document.querySelector('.usersList');
                 var parent = document.querySelector('.g-main-scroll-area');
 

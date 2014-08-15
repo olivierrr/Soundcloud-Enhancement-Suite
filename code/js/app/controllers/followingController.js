@@ -3,21 +3,44 @@
  */
 
 angular.module('SESApp')
-    .controller('FollowingController', ['$scope', '$location', '$q', '$timeout', 'Soundcloud',
-            function($scope, $location, $q, $timeout, Soundcloud) {
+    .controller('FollowingController', ['$scope', '$location', '$q', '$timeout', 'followingService', 'Soundcloud',
+        function($scope, $location, $q, $timeout, followingService, Soundcloud) {
 
-                Soundcloud.resolve({ url: '' })
-                .then(function(result) {
-                    console.log(result);
+            (function getList() {
+                var userId;
 
-                });
-                $scope.getList = function(letter) {
-                    $scope.follow = list[letters];
-                };
+                // remove /following from the url to get user's url
+                var userUrl = $location.absUrl().slice(0, -10);
 
-                $scope.setCurrentLetter = function(letter) {
-                    $scope.currentLetterGroup = $scope.following[letter];
-                    $scope.currentLetter = letter;
-                };
-            }
-        ]);
+                // resolve the url to get the user object
+                Soundcloud.resolve({
+                    url: userUrl
+                })
+                    .then(function(user) {
+                        if (user) {
+                            // get user's list of followed users
+                            followingService.getList(user, function addToScope(list) {
+                                console.log(list);
+                                $scope.following = list;
+                            });
+                        } else {
+                            console.error("Error: Unable to resolve user");
+                        }
+                    });
+            })();
+
+            /**
+             * Get the list of followed users whose names begin with the given letter
+             *
+             * @param  {string} letter Currently selected letter
+             */
+            $scope.getList = function(letter) {
+                $scope.follow = list[letter];
+            };
+
+            $scope.setCurrentLetter = function(letter) {
+                $scope.currentLetterGroup = $scope.following[letter];
+                $scope.currentLetter = letter;
+            };
+        }
+    ]);

@@ -11,14 +11,14 @@
         }
     });
 
-    chrome.tabs.onUpdated.addListener(function(tabId, details, tab) {
-        if (tab.url === "https://soundcloud.com/stream" && tab.status === "complete") {
-            chrome.tabs.executeScript(tabId, {
-                file: "js/scripts/streamContent.js"
-            }, function (res) {console.log(res);});
-        }
+    // chrome.tabs.onUpdated.addListener(function(tabId, details, tab) {
+    //     if (tab.url === "https://soundcloud.com/stream" && tab.status === "complete") {
+    //         chrome.tabs.executeScript(tabId, {
+    //             file: "js/scripts/streamContent.js"
+    //         }, function (res) {console.log(res);});
+    //     }
 
-    });
+    // });
     // listens for template requests from content script
     chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {

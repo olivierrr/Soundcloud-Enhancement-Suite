@@ -1,25 +1,35 @@
     angular.module('SESApp')
         .factory('followingService', ['$http', '$timeout', '$q', 'Soundcloud',
             function($http, $timeout, $q, Soundcloud) {
-
-                var count = 0;
-
+                // holds our alphabetized list
                 var list = {};
 
-
+                /**
+                 * Takes a user and places them into the list by the first letter
+                 * of their username.
+                 *
+                 * @param {object} user The user to be alphabetized
+                 */
                 var addToIndex = function(user) {
                     var letter = user.username.charAt(0).toUpperCase();
+
+                    // name starts with a letter
                     if (letter.match(/[A-Z]/)) {
+                        // if that letter index doesn't exist, create it
                         if (list[letter] === undefined) {
                             list[letter] = [];
                         }
                         list[letter].push(user);
-                    } else if (letter.match(/\d/)) {
+                    }
+                    // name starts with a number
+                    else if (letter.match(/\d/)) {
                         if (list['#'] === undefined) {
                             list['#'] = [];
                         }
                         list['#'].push(user);
-                    } else {
+                    }
+                    // all other characters go in the # list for right now
+                    else {
                         if (list['#'] === undefined) {
                             list['#'] = [];
                         }
@@ -28,15 +38,8 @@
                 };
 
                 /**
-                 * Retrieve our user's follow list.
-                 *
-                 * Soundcloud's API limits results to 200 per request,
-                 * so we build an array of enough function calls to get the whole list.
-                 * @param  {[type]} l
-                 * @return {[type]}
+                 * Request users in the follow list.
                  */
-
-
                 function getFollowings(offset, userId) {
                     return Soundcloud.get('/users/' + userId + '/followings', {
                         limit: 200,
@@ -44,40 +47,46 @@
                     });
                 }
 
-                function _getFollowingList(userId) {
+                /**
+                 * Builds the list using promises.
+                 *
+                 * Soundcloud's API has a limit of 200 items per request,
+                 * so we need to call getFollowings multiple times.
+                 */
+                function buildList(userId, count) {
                     var promises = [],
                         i = 0;
-                    console.log(count);
+
+                    function mapUsers (users) {
+                        users.map(addToIndex);
+                    }
+
                     while (i <= count) {
-                        promises.push(getFollowings(i, userId));
+                        promises.push(getFollowings(i, userId).then(mapUsers)
+                            );
                         i += 200;
                     }
                     return $q.all(promises);
                 }
 
                 /**
-                 * Main entry point. Needs to be able to accept user ids,
-                 * me?, /following endpoint?
-                 * @param  {[type]} userId [description]
-                 * @return {[type]}        [description]
+                 * This is a really janky implementation.  It calls buildList,
+                 * which creates a bunch of promises that are resolved when getFollowings
+                 * returns user data and maps the users into our list object.  Ideally,
+                 * the users in our .then should be the built list that we can return
+                 * and not use a callback.
                  */
-                function getFollowingCount(userId) {
-                    Soundcloud.get('/users/' + userId, {})
-                        .then(function(me) {
-                            count = me.followings_count;
-                            console.log(count);
-                        })
-                        .then(function() {
-                            console.log('here');
-                            _getFollowingList();
-                        }).then(function(users) {
-                            console.log(users);
+                function getList(user, callback) {
+                    // clear the list variable
+                    list = {};
+                    buildList(user.id, user.followings_count)
+                        .then(function(users) {
+                            callback(list);
                         });
                 }
 
                 return {
-                    getFollowingList: _getFollowingList,
-                    getFollowingCount: getFollowingCount
+                    getList: getList
                 };
             }
         ]);

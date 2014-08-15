@@ -16,27 +16,21 @@ angular.module('SESApp')
 
                 var parser = require('waveformer');
 
+                // creates a gradient for the waveforms
                 var ctx = waveform.context;
-                ctx.rect(0, 0, 100, 100);
-                ctx.stroke();
-
                 var gradient = ctx.createLinearGradient(0, 0, 0, waveform.height);
                 gradient.addColorStop(0.0, "#666666");
                 gradient.addColorStop(1.0, "#333333");
                 waveform.innerColor = gradient;
-                console.log(waveform);
-                function stylize() {
 
-
-
-                }
+                // observes when the waveform source url is available
                 attrs.$observe('src', function(value) {
                     if (value) {
+                        // parse the png into JSON data, then pass the data to waveform library
                         parser(value, function(err, _data) {
                             waveform.update({
                                 data: _data
                             });
-                        stylize();
                         });
                     }
 

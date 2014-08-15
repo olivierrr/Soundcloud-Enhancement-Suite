@@ -12,7 +12,7 @@
             if (document.querySelector('.stream__list') && document.querySelector('.streamSidebar')) {
 
                 observer.disconnect();
-                // replace the regular stream with our stream template
+                // the stream div will be replaced by our stream template
                 var stream = document.querySelector('.stream'),
                     streamList = document.querySelector('.stream__list'),
                     streamSidebar = document.querySelector('.streamSidebar');
