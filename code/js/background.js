@@ -2,6 +2,8 @@
  * Background page. This holds all of the event listeners.
  */
 (function() {
+    var execute = false;
+
     // livereload refreshes all tabs that belong to extension.
     chrome.tabs.query({}, function(tabs) {
         for (var i = 0; i < tabs.length; i++) {
@@ -11,14 +13,19 @@
         }
     });
 
-    // chrome.tabs.onUpdated.addListener(function(tabId, details, tab) {
-    //     if (tab.url === "https://soundcloud.com/stream" && tab.status === "complete") {
-    //         chrome.tabs.executeScript(tabId, {
-    //             file: "js/scripts/streamContent.js"
-    //         }, function (res) {console.log(res);});
-    //     }
+    chrome.tabs.onUpdated.addListener(function(tabId, details, tab) {
+        if (details.status === 'loading' && details.url === 'https://soundcloud.com/stream'){
+            execute = true;
+        }
 
-    // });
+        if (tab.url === "https://soundcloud.com/stream" && tab.status === "complete" && execute === true) {
+            execute = false;
+            chrome.tabs.executeScript(tabId, {
+                 file: "js/scripts/streamContent.js"
+             }, function (res) {console.log(res);});
+        }
+
+     });
     // listens for template requests from content script
     chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {

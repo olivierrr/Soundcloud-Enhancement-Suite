@@ -12,7 +12,8 @@
     },
 
     "background": {
-        "page": "html/background/background.html"
+        "page": "html/background/background.html",
+        "persistent": true
     },
     "options_page": "html/background/options.html",
     "permissions": [
