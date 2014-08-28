@@ -1,7 +1,7 @@
 angular.module('SESApp')
     .factory('modal', ['$modal', 'Groups', 'followingService', 'Soundcloud',
         function($modal, Groups, followingService, Soundcloud) {
-            var groups = Groups.all();
+            var groups = ['Jimm'];
             var data = [];
 
             function openModal(size, modalController) {

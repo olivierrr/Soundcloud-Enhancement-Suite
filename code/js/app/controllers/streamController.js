@@ -8,7 +8,7 @@ angular.module('SESApp')
 
       // listen for group change and get the new stream
       $scope.$on('activeGroupChanged', function buildActiveStream(event, group) {
-        streamService.buildStream(group.artists).then(function(stream) {
+        streamService.buildStream(group.artists).then(function done(stream) {
           $scope.stream = stream;
         });
       });

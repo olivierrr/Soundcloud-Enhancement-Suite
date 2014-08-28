@@ -38,6 +38,9 @@
             "css/style.css"
         ],
         "js": [
+            //IDBWrapper
+            "js/lib/IDBWrapper/idbstore.js",
+            "js/lib/jquery-1.11.1.min.js",
             // angular and ui-bootstrap
             "js/lib/angular/angular.js",
             "js/lib/ui-bootstrap-tpls-0.11.0.js",
@@ -51,6 +54,7 @@
             "js/app/controllers/groupController.js",
             "js/app/controllers/streamController.js",
             // services
+            "js/app/services/IDBStoreService.js",
             "js/app/services/modal.js",
             "js/app/services/groups.js",
             "js/app/services/soundcloud.js",
@@ -70,6 +74,8 @@
             "css/style.css"
             ],
         "js": [
+            "js/lib/IDBWrapper/idbstore.js",
+            "js/lib/jquery-1.11.1.min.js",
             "js/lib/angular/angular.js",
             "js/lib/ui-bootstrap-tpls-0.11.0.js",
             "js/lib/waveform.js",
