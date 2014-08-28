@@ -1,6 +1,6 @@
 (function() {
 
-    console.log("waiting for page to load..."); // dev
+    console.log('[streamContent.js] waiting for page to load...'); // dev
 
     var observer = setInterval( function() {
         if(document.querySelector('.stream__list') && document.querySelector('.streamSidebar')) {
@@ -10,6 +10,12 @@
     }, 5)
 
     function injectTemplate() {
+
+        // make sure page isn't already strapped
+        if(document.querySelector('.ng-app')) {
+            console.log('[streamContent.js] page is already strapped!') //dev
+            return
+        }
 
         // get stream template
         chrome.runtime.sendMessage({
@@ -41,6 +47,6 @@
             angular.bootstrap(contentDiv, ['SESApp']);
         });
 
-        console.log("templates injected"); // dev
+        console.log("[streamContent.js] templates injected"); // dev
     }
 }());
