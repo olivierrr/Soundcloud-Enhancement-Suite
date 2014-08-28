@@ -13,23 +13,31 @@
         }
     });
 
+    var url
+
     chrome.tabs.onUpdated.addListener(function(tabId, details, tab) {
-        if (details.status === 'loading' && details.url === 'https://soundcloud.com/stream'){
+
+        url = tab.url
+
+        if (details.status === 'loading' && details.url === 'https://soundcloud.com/stream') {
             execute = true;
         }
 
-        if (tab.url === "https://soundcloud.com/stream" && tab.status === "complete" && execute === true) {
+        if (tab.url === "https://soundcloud.com/**" && tab.status === "complete" && execute === true) {
             execute = false;
-            chrome.tabs.executeScript(tabId, {
-                 file: "js/scripts/streamContent.js"
-             }, function (res) {console.log(res);});
+
+            // execute injection script
+            // TODO: only execute once
+            chrome.tabs.executeScript(tabId, { file: "js/scripts/inject.js" });
         }
 
-     });
-    // listens for template requests from content script
+    });
+
+    // listens for template and url requests from content script
     chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {
-            sendResponse(template.load(request.template));
+            if(request.template) sendResponse(template.load(request.template));
+            if(request.url) sendResponse({url : url})
         });
 
     // checks if new version of extension is installed
