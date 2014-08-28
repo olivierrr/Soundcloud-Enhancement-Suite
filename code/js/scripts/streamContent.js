@@ -1,59 +1,46 @@
-/**
- * Content script for the Soundcloud Stream page.
- */
 (function() {
-    console.log("INJECTED STREAM");
-    // select the target node
-    var target = document.querySelector('body');
-    var alreadyDone = false;
-    // create an observer instance
-    var observer = new MutationObserver(function(mutations) {
-        if (document.querySelector('.stream__list') && document.querySelector('.streamSidebar')) {
-            observer.disconnect();
-            // the stream div will be replaced by our stream template
-            var stream = document.querySelector('.stream'),
-                streamSidebar = document.querySelector('.streamSidebar');
 
-            // get the template
-            chrome.runtime.sendMessage({
-                template: 'stream/stream'
-            }, function(response) {
+    console.log("waiting for page to load..."); // dev
 
-                // insert the template
-                var newDiv = document.createElement('div');
-                newDiv.innerHTML = response;
-                stream.insertBefore(newDiv, stream.childNodes[0]);
-            });
-
-            // add group list to the sidebar
-            chrome.runtime.sendMessage({
-                template: 'groups/groups'
-            }, function(response) {
-
-                // create an element for our template
-                var newDiv = document.createElement('div');
-                newDiv.innerHTML = response;
-                if (!document.querySelector('#contentDiv')) {
-                    streamSidebar.insertBefore(newDiv, streamSidebar.childNodes[0]);
-
-                    var contentDiv = document.querySelector('.l-fluid-fixed');
-
-                    // angular needs to be bootstrapped manually to work in chrome extensions
-                    contentDiv.classList.add('ng-app');
-                    contentDiv.classList.add('ng-csp');
-                    angular.bootstrap(contentDiv, ['SESApp']);
-                }
-            });
+    var observer = setInterval( function() {
+        if(document.querySelector('.stream__list') && document.querySelector('.streamSidebar')) {
+            clearInterval(observer);
+            injectTemplate();
         }
-    });
+    }, 5)
 
-    // configuration of the observer:
-    var config = {
-        attributes: true,
-        childList: true,
-        characterData: true
-    };
+    function injectTemplate() {
 
-    // pass in the target node, as well as the observer options
-    observer.observe(target, config);
+        // get stream template
+        chrome.runtime.sendMessage({
+            template: 'stream/stream'
+        }, function(response) {
+
+            // inject stream template
+            var newDiv = document.createElement('div');
+            newDiv.innerHTML = response;
+            var stream = document.querySelector('.stream')
+            stream.insertBefore(newDiv, stream.childNodes[0]);
+        });
+
+        // get groups template
+        chrome.runtime.sendMessage({
+            template: 'groups/groups'
+        }, function(response) {
+
+            // inject groups template
+            var newDiv = document.createElement('div');
+            newDiv.innerHTML = response;
+            var streamSidebar = document.querySelector('.streamSidebar');
+            streamSidebar.insertBefore(newDiv, streamSidebar.childNodes[0]);
+
+            // angular needs to be bootstrapped manually to work in chrome extensions
+            var contentDiv = document.querySelector('.l-fluid-fixed');
+            contentDiv.classList.add('ng-app');
+            contentDiv.classList.add('ng-csp');
+            angular.bootstrap(contentDiv, ['SESApp']);
+        });
+
+        console.log("templates injected"); // dev
+    }
 }());
