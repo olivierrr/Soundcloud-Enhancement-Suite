@@ -32,6 +32,11 @@
         "img/*"
     ],
     "content_scripts": [{
+        "matches": ["https://soundcloud.com/**"],
+        "js": [
+            "js/scripts/inject.js"
+        ]
+    }, {
         "matches": ["https://soundcloud.com/stream"],
         "css": [
             "css/bootstrap.css",
@@ -64,8 +69,6 @@
             "js/app/directives/streamItem.js",
             "js/app/directives/plangular.js",
             "js/app/directives/waveform.js",
-            // content script
-            "js/scripts/streamContent.js"
         ]
     }, {
         "matches": ["https://soundcloud.com/*/following"],
