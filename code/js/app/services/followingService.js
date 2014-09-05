@@ -77,12 +77,15 @@
                  * and not use a callback.
                  */
                 function getList(user, callback) {
+                    var deferred = $q.defer();
                     // clear the list variable
                     list = {};
                     buildList(user.id, user.followings_count)
                         .then(function(users) {
-                            callback(list);
+                            deferred.resolve(list);
                         });
+
+                    return deferred.promise;
                 }
 
                 return {

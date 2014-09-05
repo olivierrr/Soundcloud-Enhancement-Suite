@@ -1,17 +1,15 @@
 angular.module('SESApp')
     .factory('modal', ['$modal', 'Groups', 'followingService', 'Soundcloud',
         function($modal, Groups, followingService, Soundcloud) {
-            var groups = ['Jimm'];
-            var data = [];
 
-            function openModal(size, modalController) {
+            function openModal(size, template, controller, data) {
                 var modalInstance = $modal.open({
-                    templateUrl: chrome.extension.getURL('/html/groups/partials/modal.html'),
-                    controller: modalController,
+                    templateUrl: chrome.extension.getURL('/html/' + template + '/partials/modal.html'),
+                    controller: controller,
                     size: size,
                     resolve: {
-                        items: function() {
-                            return '';
+                        modalData: function() {
+                            return data;
                         }
                     }
                 });

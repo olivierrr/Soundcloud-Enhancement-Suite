@@ -40,6 +40,9 @@ angular.module('SESApp')
         delete: function del(path, params) {
             return request('DELETE', path, params);
         },
+        me: function me() {
+            return request('GET', '/me', {});
+        },
         resolve: function resolve(params) {
             return request('GET', '/resolve', params);
         }

@@ -4,7 +4,7 @@
     .factory('Groups', ['$q', 'IDBStore',
         function($q, IDBStore) {
 
-            function getStore() {
+            function openStore() {
                 return IDBStore.get('groups', 'id', true, [{
                     name: 'name',
                     keyPath: 'name',
@@ -17,27 +17,36 @@
              * @param {[type]} group [description]
              */
             function create(group) {
-                getStore().then(addToStore, err);
+                var deferred = $q.defer();
+
+                openStore().then(addToStore, err);
 
                 function addToStore(store) {
-                    store.put(group, null, err);
+                    store.put(group, success, err);
+                }
+
+                function success(tester) {
+                    console.log(tester);
+                    deferred.resolve();
                 }
 
                 function err(reason) {
-                    // console.log(reason);
+                    deferred.reject(reason);
                 }
+
+                return deferred.promise;
             }
 
             /**
-             * Get all group data from the store.
+             * Get all groups from the store.
              * @return {[type]} [description]
              */
             function getAll() {
                 var deferred = $q.defer();
 
-                getStore().then(getFromStore);
+                openStore().then(getGroupData);
 
-                function getFromStore(store) {
+                function getGroupData(store) {
                     store.getAll(success, error);
                 }
 
@@ -53,24 +62,20 @@
             }
 
             /**
-             * Get names of all of the groups in the store.
+             * Get names of all user's groups.
              * @return {[type]} [description]
              */
             function getAllNames() {
-                getAll().then(getNames)
-                // Just for dev purposes
-                .then(function(names) {console.log(names);});
+                getAll().then(getNames, error);
 
                 function getNames(groups) {
                     return groups.map(function(group) { return group.name; });
                 }
+
+                function error(reason) {
+
+                }
             }
-
-            getAllNames();
-            // function getAllNames(groupId) {
-            //     var deferred = $q.defer();
-
-            // }
 
             var activeGroup = [];
 

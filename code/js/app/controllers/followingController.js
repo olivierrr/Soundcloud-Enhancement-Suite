@@ -3,8 +3,8 @@
  */
 
 angular.module('SESApp')
-    .controller('FollowingController', ['$scope', '$location', '$q', '$timeout', 'followingService', 'Soundcloud',
-        function($scope, $location, $q, $timeout, followingService, Soundcloud) {
+    .controller('FollowingController', ['$scope', '$location', 'followingService', 'Soundcloud',
+        function($scope, $location, followingService, Soundcloud) {
 
             (function getList() {
                 var userId;
@@ -18,7 +18,7 @@ angular.module('SESApp')
                 })
                     .then(function(user) {
                         if (user) {
-                            // get user's list of followed users
+                            // request user's list of followed users
                             followingService.getList(user, function addToScope(list) {
                                 console.log(list);
                                 $scope.following = list;
