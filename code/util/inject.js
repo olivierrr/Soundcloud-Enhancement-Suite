@@ -22,8 +22,8 @@ parseUrl = function(url) {
     if (url === 'https://soundcloud.com/stream') {
         whenIsLoaded(document.querySelector('.stream__list') && document.querySelector('.streamSidebar'),
             function() {
-                inject('streams', 'sidebar', '.streamSidebar');
-                inject('streams', 'main', '.stream');
+                inject('streams', 'main', '.stream', false);
+                inject('streams', 'sidebar', '.streamSidebar', true);
             });
     }
 
@@ -32,16 +32,11 @@ parseUrl = function(url) {
         template.following();
 };
 
-template.following = function() {
-    // todo
-};
-
-
 /**
     injection helpers
 */
 
-function inject(baseLocation, fileLocation, domLocation) {
+function inject(baseLocation, fileLocation, domLocation, attemptBootstrap) {
     chrome.runtime.sendMessage({
         base: baseLocation,
         template: fileLocation
@@ -55,7 +50,9 @@ function inject(baseLocation, fileLocation, domLocation) {
 
         console.log("[inject.js] template injected");
 
-        strapAngular();
+        if(attemptBootstrap) {
+            strapAngular();
+        }
     });
 }
 

@@ -14,8 +14,11 @@ angular.module('SESApp')
       $scope.$on('activeStreamChanged', function buildActiveStream(event, newStream) {
 
         streamsBuilderService.buildStream(newStream.artists).then(function done(stream) {
+            console.log("Stream");
           console.log(stream);
           $scope.stream = stream;
+          console.log("$SCOPE.STREAM");
+          console.log($scope.stream);
         });
       });
     }]);

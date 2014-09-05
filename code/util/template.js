@@ -11,11 +11,12 @@ var template = function() {
             friends: 'app/streams/views/partials/friends',
             main: 'app/streams/views/streamsMain',
             modal: 'app/streams/views/streamsModal',
-            sidebar: 'app/streams/views/streamsSidebar'
-        },
+            sidebar: 'app/streams/views/streamsSidebar',
 
-        playlist: 'app/streams/views/partials/playlist',
-        track: 'app/streams/views/partials/track',
+
+            playlist: 'app/streams/views/partials/playlist',
+            track: 'app/streams/views/partials/track'
+        },
     };
 
     return {

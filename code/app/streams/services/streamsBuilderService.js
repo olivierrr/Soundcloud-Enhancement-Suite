@@ -11,13 +11,13 @@ angular.module('SESApp')
 
             function getTrackData(id) {
                 return Soundcloud.get('/users/' + id + '/tracks', {
-                    limit: 1
+                    limit: 10
                 });
             }
 
             function getPlaylists(id) {
                 return Soundcloud.get('/users/' + id + '/playlists', {
-                    limit: 1
+                    limit: 10
                 });
             }
 

@@ -2,10 +2,12 @@ angular.module('SESApp')
     .directive('streamItem', function($compile) {
 
         var linker = function(scope, element, attrs) {
-
+            console.log(scope.item.kind);
             chrome.runtime.sendMessage({
-                template: 'stream/partials/' + scope.item.kind
+                base: 'streams',
+                template: scope.item.kind
             }, function(response) {
+                console.log(response);
                 element.html(response);
 
                 $compile(element.contents())(scope);
