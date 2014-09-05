@@ -1,21 +1,21 @@
 {
     "name": "Soundcloud Enhancement Suite",
-    "version": "0.1.0",
+    "version": "0.0.0",
     "manifest_version": 2,
     "description": "Soundcloud Enhancement Suite adds new features to the Soundcloud website.",
     "icons": {
-        "48": "img/icon.png"
+        "48": "assets/img/icon.png"
     },
     "browser_action": {
-        "default_icon": "img/icon.png",
+        "default_icon": "assets/img/icon.png",
         "default_title": "Soundcloud Enhancement Suite"
     },
 
     "background": {
-        "page": "html/background/background.html",
+        "page": "background/views/background.html",
         "persistent": true
     },
-    "options_page": "html/background/options.html",
+    "options_page": "background/views/options.html",
     "permissions": [
         "identity",
         "storage",
@@ -26,73 +26,98 @@
         "https://*.sndcdn.com/"
     ],
     "web_accessible_resources": [
-        "js/*",
-        "html/*",
-        "css/*",
-        "img/*"
+        "app/*",
+        "assets/*",
+        "lib/*",
+        "background/*",
+        "util/*"
     ],
     "content_scripts": [{
         "matches": ["https://soundcloud.com/**"],
         "js": [
-            "js/scripts/inject.js"
+            "util/inject.js"
         ]
     }, {
         "matches": ["https://soundcloud.com/stream"],
         "css": [
-            "css/bootstrap.css",
-            "css/style.css"
+            "assets/css/bootstrap.css",
+            "assets/css/style.css"
         ],
         "js": [
-            //IDBWrapper
-            "js/lib/IDBWrapper/idbstore.js",
-            "js/lib/jquery-1.11.1.min.js",
-            // angular and ui-bootstrap
-            "js/lib/angular/angular.js",
-            "js/lib/ui-bootstrap-tpls-0.11.0.js",
-            // waveform.js Library
-            "js/lib/waveform.js",
-            "js/lib/waveformer.js",
+
+            // vendor libraries
+            "lib/IDBWrapper/idbstore.js",
+            "lib/jquery/jquery-1.11.1.min.js",
+            "lib/angular/angular.js",
+            "lib/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js",
+            "lib/waveform-js/waveform.js",
+            "lib/waveform-parser/waveform-parser.js",
+
             // app
-            "js/app/app.js",
-            // controllers
-            "js/app/controllers/modalInstanceController.js",
-            "js/app/controllers/groupController.js",
-            "js/app/controllers/streamController.js",
-            // services
-            "js/app/services/IDBStoreService.js",
-            "js/app/services/modal.js",
-            "js/app/services/groups.js",
-            "js/app/services/soundcloud.js",
-            "js/app/services/streamService.js",
-            "js/app/services/followingService.js",
-            // directives
-            "js/app/directives/streamItem.js",
-            "js/app/directives/plangular.js",
-            "js/app/directives/waveform.js",
+            "app/app.js",
+
+            // friends
+            "app/friends/controllers/friendsController.js",
+            "app/friends/services/friendsService.js",
+            "app/friends/directives/friendsList.js",
+
+            // modals
+            "app/modal/controllers/modalInstanceController.js",
+            "app/modal/services/modalService.js",
+
+            // streams
+            "app/streams/controllers/streamsMainController.js",
+            "app/streams/controllers/streamsModalController.js",
+            "app/streams/controllers/streamsSidebarController.js",
+            "app/streams/directives/streamItem.js",
+            "app/streams/directives/plangular.js",
+            "app/streams/directives/waveform.js",
+            "app/streams/services/streamsBuilderService.js",
+            "app/streams/services/streamsManagerService.js",
+
+            // system
+            "app/system/services/IDBStoreService.js",
+            "app/system/services/soundcloud.js"
         ]
     }, {
         "matches": ["https://soundcloud.com/*/following"],
         "css": [
-            "css/bootstrap.css",
-            "css/style.css"
+            "assets/css/bootstrap.css",
+            "assets/css/style.css"
             ],
         "js": [
-            "js/lib/IDBWrapper/idbstore.js",
-            "js/lib/jquery-1.11.1.min.js",
-            "js/lib/angular/angular.js",
-            "js/lib/ui-bootstrap-tpls-0.11.0.js",
-            "js/lib/waveform.js",
-            "js/app/app.js",
-            "js/app/services/modal.js",
-            "js/app/services/groups.js",
-            "js/app/services/soundcloud.js",
-            "js/app/services/followingService.js",
-            // controllers
-            "js/app/controllers/modalInstanceController.js",
-            "js/app/controllers/followingController.js",
-            "js/app/controllers/groupController.js",
-            // content script
-            "js/scripts/followingContent.js"
+            "lib/IDBWrapper/idbstore.js",
+            "lib/jquery/jquery-1.11.1.min.js",
+            "lib/angular/angular.js",
+            "lib/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js",
+            "lib/waveform-js/waveform.js",
+            "lib/waveform-parser/waveform-parser.js",
+
+            // app
+            "app/app.js",
+
+            // friends
+            "app/friends/controllers/friendsController.js",
+            "app/friends/services/friendsService.js",
+            "app/friends/directives/friendsList.js",
+
+            // modals
+            "app/modal/controllers/modalInstanceController.js",
+            "app/modal/services/modalService.js",
+
+            // streams
+            "app/streams/controllers/streamsMainController.js",
+            "app/streams/controllers/streamsModalController.js",
+            "app/streams/controllers/streamsSidebarController.js",
+            "app/streams/directives/streamItem.js",
+            "app/streams/directives/plangular.js",
+            "app/streams/directives/waveform.js",
+            "app/streams/services/streamsBuilderService.js",
+            "app/streams/services/streamsManagerService.js",
+
+            // system
+            "app/system/services/IDBStoreService.js",
+            "app/system/services/soundcloud.js"
         ]
     }],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
