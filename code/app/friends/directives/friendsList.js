@@ -4,6 +4,7 @@ angular.module('SESApp')
         var linker = function(scope, element, attrs) {
 
             chrome.runtime.sendMessage({
+                base: 'streams',
                 template: 'friends'
             }, function(response) {
                 element.html(response);

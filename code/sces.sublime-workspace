@@ -1,0 +1,964 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"length1",
+				"length1"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/streams/views/partials/friends.html",
+			"settings":
+			{
+				"buffer_size": 1554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/css/style.css",
+			"settings":
+			{
+				"buffer_size": 1994,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 207.0,
+		"selected_items":
+		[
+			[
+				"PRETTIFY",
+				"HTMLPrettify"
+			],
+			[
+				"prettify",
+				"HTMLPrettify"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"prettif",
+				"HTMLPrettify"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pret",
+				"HTMLPrettify: Set Prettify Preferences"
+			],
+			[
+				"pretti",
+				"HTMLPrettify"
+			],
+			[
+				"Snippet: ",
+				"Snippet: setTimeout"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Scheme Editor: Edit current color scheme"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Color",
+				"Color Scheme Editor: Goto next matching scope"
+			],
+			[
+				"Colo",
+				"Color Scheme Editor: Edit current color scheme"
+			],
+			[
+				"colors",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 610.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/sces/code/app/streams/views/streamsModal.html",
+		"/Applications/MAMP/htdocs/sces/code/util/template.js",
+		"/Applications/MAMP/htdocs/sces/code/app/friends/views/friends.html",
+		"/Applications/MAMP/htdocs/sces/code/gulpfile.js",
+		"/Applications/MAMP/htdocs/sces/code/package.json",
+		"/Applications/MAMP/htdocs/sces/code/app/streams/views/partials/friends.html",
+		"/Applications/MAMP/htdocs/sces/code/app/friends/directives/friendsList.js",
+		"/Applications/MAMP/htdocs/sces/code/manifest.json",
+		"/Applications/MAMP/htdocs/sces/code/app/streams/views/streamsMain.html",
+		"/Applications/MAMP/htdocs/sces/code/util/inject.js",
+		"/Applications/MAMP/htdocs/sces/code/app/streams/views/streamsSidebar.html",
+		"/Applications/MAMP/htdocs/sces/code/app/streams/controllers/streamsModalController.js",
+		"/Applications/MAMP/htdocs/sces/code/app/streams/controllers/streamsSidebarController.js",
+		"/Applications/MAMP/htdocs/sces/code/app/streams/directives/streamItem.js",
+		"/Applications/MAMP/htdocs/sces/code/node_modules/tiny-lr/lib/public/livereload.js",
+		"/Applications/MAMP/htdocs/sces copy/code/background/views/background.html",
+		"/Applications/MAMP/htdocs/sces copy/code/manifest.json",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/controllers/streamsMainController.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/views/streamsMain.html",
+		"/Applications/MAMP/htdocs/sces copy/code/system/util/template.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/controllers/streamsModalController.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/services/streamsManagerService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/controllers/streamsSidebarController.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/modal/services/modalService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/system/util/streamContent.js",
+		"/Users/harryhedger/sites/sces/code/manifest.json",
+		"/Applications/MAMP/htdocs/sces copy/code/system/util/inject.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/views/streamsModal.html",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/views/streamsSidebar.html",
+		"/Applications/MAMP/htdocs/sces copy/code/system/background/views/background.html",
+		"/Applications/MAMP/htdocs/testing/code/manifest.json",
+		"/Applications/MAMP/htdocs/testing/code/js/scripts/inject.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/friends/directives/friendsList.js",
+		"/Applications/MAMP/htdocs/sces copy/code/system/util/backgroundHandlers.js",
+		"/Applications/MAMP/htdocs/sces copy/code/system/background/js/background.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/modal/services/modalInstanceService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/app.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/directives/plangular.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/directives/streamItem.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/directives/waveform.js",
+		"/Applications/MAMP/htdocs/sces copy/code/package.json",
+		"/Applications/MAMP/htdocs/sces copy/code/app/system/services/soundcloud.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/system/services/IDBStoreService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/services/streamsBuilderService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/views/partials/track.html",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/views/partials/playlist.html",
+		"/Applications/MAMP/htdocs/sces copy/code/app/modal/controllers/modalInstanceController.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/friends/services/friendsService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/friends/views/friends.html",
+		"/Applications/MAMP/htdocs/sces copy/code/app/friends/controllers/friendsController.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/services/groups.js",
+		"/Applications/MAMP/htdocs/sces/code/html/groups/partials/modal.html",
+		"/Applications/MAMP/htdocs/sces/code/html/friends/friends.html",
+		"/Applications/MAMP/htdocs/sces/code/js/app/controllers/followingController.js",
+		"/Applications/MAMP/htdocs/sces/code/html/stream/stream.html",
+		"/Applications/MAMP/htdocs/sces/code/js/app/directives/streamItem.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/directives/friendsList.js",
+		"/Applications/MAMP/htdocs/sces/code/js/util/template.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/controllers/groupsModalController.js",
+		"/Applications/MAMP/htdocs/testing/code/js/app/controllers/groupsModalController.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/controllers/groupController.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/groupss/groups.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/services/streamService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/groups/services/customStreamsService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/system/services/modal.js",
+		"/Applications/MAMP/htdocs/sces copy/code/views/stream/stream.html",
+		"/Applications/MAMP/htdocs/sces copy/code/scripts/inject.js",
+		"/Applications/MAMP/htdocs/testing/code/js/util/template.js",
+		"/Applications/MAMP/htdocs/sces copy/code/scripts/followingContent.js",
+		"/Applications/MAMP/htdocs/sces copy/code/lib/waveform.js",
+		"/Applications/MAMP/htdocs/sces copy/code/lib/waveformer.js",
+		"/Applications/MAMP/htdocs/sces copy/code/wavey.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/views/partials/random.html",
+		"/Applications/MAMP/htdocs/sces copy/code/app/system/services/modalService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/streams/services/streamManagerService.js",
+		"/Applications/MAMP/htdocs/sces copy/code/app/friends/services/friendsList.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/services/followingService.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/services/soundcloud.js",
+		"/Applications/MAMP/htdocs/sces/code/js/scripts/followingContent.js",
+		"/Applications/MAMP/htdocs/sces/code/js/scripts/streamContent.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/services/modal.js",
+		"/Applications/MAMP/htdocs/sces/code/css/style.css",
+		"/Applications/MAMP/htdocs/sces/code/html/stream/partials/track.html",
+		"/Applications/MAMP/htdocs/sces/code/html/following/following.html",
+		"/Applications/MAMP/htdocs/sces/code/js/app/modal.html",
+		"/Applications/MAMP/htdocs/sces/code/js/app/controllers/streamController.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/app.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/services/IDBStoreService.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/controllers/modalInstanceController.js",
+		"/Applications/MAMP/htdocs/sces/code/js/app/services/streamService.js",
+		"/Applications/MAMP/htdocs/SESuite/code/js/app/controllers/groupController.js",
+		"/Applications/MAMP/htdocs/SESuite/code/js/app/services/groups.js",
+		"/Applications/MAMP/htdocs/sces/code/js/background.js",
+		"/Applications/MAMP/htdocs/sces/code/html/groups/groups.html",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/html/groups/partials/modal.html",
+		"/Users/harryhedger/Downloads/jquery-1.11.1.js",
+		"/Users/harryhedger/Downloads/Mizage.Divvy.v1.3.8.MacOSX.Incl.Keymaker.and.Patch-CORE/cr-pthke/FILE_ID.DIZ",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/manifest.json",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/html/groups/groups.html",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/js/lib/jquery-1.11.1.min.js",
+		"/Users/harryhedger/Downloads/jquery-1.11.1.min.js",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/js/scripts/streamContent.js",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/js/app/controllers/groupController.js",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/html/background/background.html",
+		"/Users/harryhedger/Downloads/Soundcloud-Enhancement-Suite-master/code/html/stream/stream.html",
+		"/Users/harryhedger/sites/sces/code/package.json",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/groupController.js",
+		"/Users/harryhedger/sites/sces/code/js/app/controllers/groupsController.js",
+		"/Users/harryhedger/sites/sces/code/js/background.js",
+		"/Users/harryhedger/sites/sces/code/js/scripts/followingContent.js",
+		"/Users/harryhedger/sites/sces/code/js/scripts/streamContent.js",
+		"/Users/harryhedger/sites/sces-backup/code/js/scripts/followingContent.js",
+		"/Users/harryhedger/sites/sces/code/js/app/directives/index.js",
+		"/Users/harryhedger/sites/sces/code/js/app/app.js",
+		"/Users/harryhedger/sites/sces-backup/code/js/app/app.js",
+		"/Users/harryhedger/sites/sces-backup/code/bundle.js",
+		"/Users/harryhedger/sites/sces-backup2/code/js/scripts/followingContent.js",
+		"/Users/harryhedger/sites/sces-backup/code/js/scripts/streamContent.js",
+		"/Users/harryhedger/sites/sces-backup/code/manifest.json",
+		"/Users/harryhedger/sites/sces-backup/code/js/app/index.js",
+		"/Users/harryhedger/sites/sces-backup/code/js/app/directives/index.js",
+		"/Users/harryhedger/sites/sces-backup/code/js/app/directives/waveform.js",
+		"/Users/harryhedger/sites/sces/code/js/app/directives/streamItem.js",
+		"/Users/harryhedger/sites/sces/code/js/app/directives/plangular.js",
+		"/Users/harryhedger/sites/sces/code/js/app/directives/waveform.js",
+		"/Users/harryhedger/sites/sces/code/js/lib/waveform.js",
+		"/Users/harryhedger/sites/sces-backup2/code/js/scripts/streamContent.js",
+		"/Users/harryhedger/sites/sces-backup2/code/js/app/controllers/followingController.js"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Applications/MAMP/htdocs/wordpress/",
+			"/Applications/MAMP/htdocs/wordpress/wp-content/themes/casablanca",
+			"",
+			"/Users/harryhedger/sites/sces/",
+			"/Users/harryhedger/sites/sces/code/js/modules",
+			"/Users/harryhedger/sites/sces/code/js/modules/background",
+			"/Users/harryhedger/sites/sces/code/js/modules/content",
+			"/Users/harryhedger/sites/sces/code/html",
+			"/Users/harryhedger/sites/sces/code/js/modules",
+			"/Users/harryhedger/sites/sces/code/js/stream_content.js",
+			"/Users/harryhedger/sites/sces/code/html/",
+			"/Users/harryhedger/sites/sces/,-Users/harry/hedger/sites/sces/code/js/lib/",
+			"/Users/harryhedger/sites/sces/,-Users/harry/hedger/sites/sces/code/js/lib/*",
+			"/Users/harryhedger/sites/sces/,-underscore.js,-Users/harry/hedger/sites/sces/code/js/lib/",
+			"/Users/harryhedger/sites/sces/,-Users/harry/hedger/sites/sces/code/js/lib/",
+			"/Users/harryhedger/sites/sces/,-underscore.js,-Users/harry/hedger/sites/sces/code/js/lib/",
+			"/Users/harryhedger/sites/sces/",
+			"/Users/harryhedger/sites/sces/code/js/modules",
+			"/Users/harryhedger/sites/sces",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"system",
+			"background",
+			"system",
+			"modal",
+			"group",
+			"parseUrl",
+			"url",
+			"js/",
+			"group",
+			"Groups",
+			"follow",
+			"getList",
+			"follow",
+			"friends",
+			"follow",
+			"following",
+			"console.log",
+			"Groups",
+			"ready:",
+			"ready(",
+			"ready",
+			"}\n",
+			"article",
+			"close",
+			" - ",
+			"Stream Contrller",
+			"config",
+			"*/\n",
+			"15px",
+			"40px",
+			"script",
+			"script src",
+			"webkit",
+			"navbar",
+			"margin",
+			"navbar",
+			"navbar,",
+			"navbar {",
+			"navbar",
+			"margin",
+			"border",
+			"item",
+			"width",
+			"bg",
+			"margin",
+			"container",
+			"margin",
+			"padding",
+			"padding:",
+			"padding",
+			"nav",
+			"padding",
+			"navig",
+			"images",
+			"background",
+			"220px",
+			"h1 {",
+			"font-family",
+			"pill",
+			"font",
+			"height",
+			"navig",
+			"navigation",
+			"content",
+			"font-size:",
+			"h1",
+			"site-title",
+			"display:",
+			"header",
+			"opacity",
+			"background",
+			"animation",
+			"fadeIn",
+			"keyframes",
+			"<?",
+			"script",
+			"jquery",
+			"script",
+			"brand-primary",
+			"height",
+			"gray",
+			"meta",
+			"recent",
+			"margin",
+			"font-family",
+			"margin",
+			"main-navigation",
+			"col-md-1",
+			"display:",
+			"container-fluid",
+			"container",
+			"bootstrap",
+			"lemonade",
+			"bit",
+			"frame",
+			"bit",
+			"hr",
+			"header",
+			"nav-item",
+			"content",
+			".main-navigation",
+			"logo",
+			"cb-",
+			"cb",
+			"cb-logo",
+			"logo",
+			"col-md",
+			"container-fluid",
+			"row",
+			"display: table",
+			"margin: ",
+			"margin:",
+			"menu",
+			"font-family",
+			"bold",
+			"PillGothic",
+			"nav-item",
+			"color: ",
+			"#888",
+			"#777",
+			"#666",
+			"#555",
+			"#444",
+			"#333",
+			"#222",
+			"#777",
+			"#666",
+			"#4"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"stream",
+			"-",
+			"observerConfig",
+			"link",
+			"brand-color",
+			"col",
+			"stream_item.",
+			"lodash",
+			"underscore",
+			"lodash",
+			"/js/lib/underscore.js",
+			"underscore",
+			"lodash",
+			"seaApp",
+			"seaSuite",
+			"stream_item.track",
+			"stream.track",
+			"activeGroup",
+			"Groups",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/streams/views/partials/friends.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								581,
+								581
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assets/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1994,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1774,
+								1774
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_indent": true,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 920.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "sces.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"back",
+				"code/js/background.js"
+			],
+			[
+				"contentser",
+				"code/js/modules/content/contentServices.js"
+			],
+			[
+				"contentcont",
+				"code/js/modules/content/contentControllers.js"
+			],
+			[
+				"content",
+				"code/js/modules/contentHandlers.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/sites/sces/sces.sublime-project"
+			],
+			[
+				"p",
+				"~/sites/sces/sces.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 187.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

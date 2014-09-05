@@ -10,20 +10,12 @@
 </div>
 <div class="modal-body">
     <div class="addToStream" ng-show="activeTab == 'add'">
-        <div class="textfield messageOutside">
             <span class="input__label">Stream to add:</span>
-        </div>
-        <div>
-            <input class="textfield__input sc-input sc-input-full" ng-model="new_group.name" id="textfield__input-title" type="text" value="" aria-required="false">
-        </div>
+            <input ng-model="newStream.name" id="textfield__input-title" type="text" value="" aria-required="false">
     </div>
     <div class="createStream" ng-show="activeTab == 'create'">
-        <div class="textfield messageOutside">
-            <span class="input__label">Stream to create:</span>
-        </div>
-        <div>
-            <input class="textfield__input sc-input sc-input-full" id="textfield_new_group" ng-model="newStream.name"type="text" value="" aria-required="true">
-        </div>
+            <span class="input-label">Stream Name:</span>
+            <input class="stream-name-input" id="textfield_new_group" ng-model="newStream.name" type="text" value="" aria-required="true">
     </div>
     <div class="editStream" ng-show="activeTab == 'edit'">
         <div class="textfield messageOutside">
@@ -38,6 +30,6 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button class="sc-button" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
+    <button class="sc-button" ng-disabled="!newStream.name" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
     <button class="sc-button" ng-click="cancel()">Cancel</button>
 </div>

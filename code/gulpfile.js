@@ -4,7 +4,7 @@ var tinylr = require('tiny-lr');
 gulp.task('dev', function () {
   var lr = tinylr();
   lr.listen(35729);
-  gulp.watch(['manifest.json', './js/**/*.js', './css/**/*.css', './html/**/*.html'], function (evt) {
+  gulp.watch(['manifest.json', './app/**/*.js', './util/**/*.js', "./background/js/background.js", "./background/views/*.html", './assets/css/**/*.css', './app/**/*.html'], function (evt) {
     console.log("Detected change: " + evt.path);
     lr.changed({
       body: {

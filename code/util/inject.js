@@ -14,7 +14,7 @@ var lastUrl;
                     parseUrl(lastUrl);
                 }
             });
-    }, 100);
+    }, 3000);
 })();
 
 parseUrl = function(url) {

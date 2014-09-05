@@ -4,10 +4,11 @@ var template = function() {
 
     var templates = {
         friends: {
-            main: 'app/friends/views/friends.html'
+            main: 'app/friends/views/friends'
         },
 
         streams: {
+            friends: 'app/streams/views/partials/friends',
             main: 'app/streams/views/streamsMain',
             modal: 'app/streams/views/streamsModal',
             sidebar: 'app/streams/views/streamsSidebar'

@@ -2,8 +2,8 @@
  * Controller for Groups Modal
  */
 angular.module('SESApp')
-    .controller('StreamsModalController', ['$scope', '$log', '$modal', 'modalService', 'modalData', 'streamsManagerService', 'Soundcloud', 'friendsService',
-        function($scope, $log, $modal, modalService, modalData, streamsManagerService, Soundcloud, friendsService) {
+    .controller('StreamsModalController', ['$scope', '$log', '$location', '$anchorScroll', '$modal', 'modalService', 'modalData', 'streamsManagerService', 'Soundcloud', 'friendsService',
+        function($scope, $log, $location, $anchorScroll, $modal, modalService, modalData, streamsManagerService, Soundcloud, friendsService) {
 
             (function getStreams() {
                 streamsManagerService.getAll().then(function(streams) {
@@ -20,13 +20,18 @@ angular.module('SESApp')
                 }
 
                 function done(list) {
+                    console.log(list);
                     $scope.friends = list;
                 }
             })();
-
+            $scope.isBlank = function(name) {
+                console.log(name);
+            };
             $scope.setCurrentLetter = function(letter) {
                 $scope.currentLetterGroup = $scope.friends[letter];
                 $scope.currentLetter = letter;
+                $location.hash(letter);
+                $anchorScroll();
             };
             $scope.activateTab = function(tab) {
                 var oldTab = '.' + $scope.activeTab + 'Tab';
@@ -42,9 +47,24 @@ angular.module('SESApp')
 
             $scope.activateTab(modalData.activeTab);
 
+            $scope.selectUser = function (user) {
+                user.selected = true;
+                console.log(user);
+
+            };
+
             $scope.createNewStream = function(stream) {
-                console.log("Creating new stream");
-                var group = {name: stream.name, artists: [123,456,789]};
+                var artists = [];
+                console.log($scope.friends);
+                angular.forEach($scope.friends, function(letters) {
+                    letters.map(function(user) {
+                        if (user.selected === true) {
+                            console.log("Selected: " + user.username + "(" + user.id + ")");
+                            artists.push(user.id);
+                        }
+                    });
+                });
+                var group = {name: stream.name, artists: artists};
                 streamsManagerService.create(group);
             };
 
