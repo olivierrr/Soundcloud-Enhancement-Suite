@@ -1,15 +1,16 @@
-ModalInstanceCtrl = function ($scope, $modalInstance, items) {
-  $scope.items = items;
+ModalInstanceCtrl = function($scope, $modalInstance, items) {
 
-  $scope.selected = {
-    item: $scope.items[0]
-  };
+    $scope.items = items;
 
-  $scope.ok = function () {
-    $modalInstance.close($scope.selected.item);
-  };
+    $scope.selected = {
+        item: $scope.items[0];
+    };
 
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+    $scope.ok = function() {
+        $modalInstance.close($scope.selected.item);
+    };
+
+    $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+    };
 };

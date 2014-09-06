@@ -1,30 +1,100 @@
 <div class="">
-    <div class="letters" style="display: inline-block;">
-        <ul class="g-tabs friends-letter-list" style="margin: 0 0 5px 0">
+    <div class="letters">
+        <ul class="g-tabs friends-letter-list">
             <li class="g-tabs-item networkTabs__following" data-ng-repeat="(letter, users) in friends">
                 <a href="#{{letter}" class="g-tabs-link" ng-click="setCurrentLetter(letter)">{{letter}}</a>
             </li>
-
         </ul>
     </div>
+
     <div class="friends-list-container">
+
         <div class="friends-search">Filter by Name
             <input type="text" ng-model="filterBox">
         </div>
+
         <div class="friends-list-body">
-            <ul class="" style="display: inline-block;" style="width:100%" ng-repeat="(letter, users) in friends">
+            <ul class="friends-list" ng-repeat="(letter, users) in friends">
                 <h1 ng-show="filtered.length" id="{{letter}}">{{letter}}</h1>
                 <li class="friends-item" ng-click="selectUser(user)"  data-ng-repeat="user in (filtered = (users | filter: { username: filterBox }))">
                     <div class="">
                         <img class="friends-item-image" src="{{user.avatar_url}}" alt="{{user.username}}'s' avatar">
                         <div class="friends-item-footer">
-                        <h2 class="friends-item-name">{{user.username}}
-                        </h2>
-                        <input ng-model="user.selected" class="friends-item-checkbox" type="checkbox">
+                            <h2 class="friends-item-name">{{user.username}}</h2>
+                            <input ng-model="user.selected" class="friends-item-checkbox" type="checkbox">
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
+
     </div>
 </div>
+
+<style>
+
+.letters {
+  display: inline-block;
+}
+
+.friends-list {
+    display: inline-block;
+    width:100%;
+}
+
+.friends-letter-list {
+  display:inline-block;
+  margin: 0 0 5px 0;
+}
+
+.friends-letter-letter {
+  display:block;
+}
+ 
+.friends-list-container {
+  display:inline-block;
+  width: 100%;
+  float: right;
+    box-sizing: border-box;
+}
+
+.friends-list-body {
+    position: relative;
+      box-sizing: border-box;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    overflow-y: auto;
+    border: 1px dotted #ccc;
+}
+
+.friends-search {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+}
+
+.friends-item {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 33%;
+  border: 1px dotted #ccc;
+}
+
+.friends-item-image {
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+
+.friends-item-checkbox, .friends-item-footer, .friends-item-name {
+  display:inline-block;
+  margin: auto;
+  text-align: center;
+}
+
+</style>

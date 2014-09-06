@@ -1,21 +1,25 @@
 <div class="modal-header">
     <ul class="g-tabs g-tabs-large">
-        <li class="g-tabs-item"><a class="g-tabs-link addTab" ng-click="activateTab('add')">Add to stream</a>
+        <li class="g-tabs-item">
+            <a class="g-tabs-link addTab" ng-click="activateTab('add')">Add to stream</a>
         </li>
-        <li class="g-tabs-item"><a class="g-tabs-link createTab" ng-click="activateTab('create')">Create new</a>
+        <li class="g-tabs-item">
+            <a class="g-tabs-link createTab" ng-click="activateTab('create')">Create new</a>
         </li>
-        <li class="g-tabs-item"><a class="g-tabs-link editTab" ng-click="activateTab('edit')">Edit streams</a>
+        <li class="g-tabs-item">
+            <a class="g-tabs-link editTab" ng-click="activateTab('edit')">Edit streams</a>
         </li>
     </ul>
 </div>
+
 <div class="modal-body">
     <div class="addToStream" ng-show="activeTab == 'add'">
-            <span class="input__label">Stream to add:</span>
-            <input ng-model="newStream.name" id="textfield__input-title" type="text" value="" aria-required="false">
+        <span class="input__label">Stream to add:</span>
+        <input ng-model="newStream.name" id="textfield__input-title" type="text" value="" aria-required="false">
     </div>
     <div class="createStream" ng-show="activeTab == 'create'">
-            <span class="input-label">Stream Name:</span>
-            <input class="stream-name-input" ng-model="newStream.name" type="text" value="" aria-required="true">
+        <span class="input-label">Stream Name:</span>
+        <input class="stream-name-input" ng-model="newStream.name" type="text" value="" aria-required="true">
     </div>
     <div class="editStream" ng-show="activeTab == 'edit'">
         <div class="textfield messageOutside">
@@ -25,10 +29,9 @@
             <input class="textfield__input sc-input sc-input-full" id="textfield__input-title" type="text" value="" aria-required="false">
         </div>
     </div>
-
     <div friends-list></div>
-    </div>
 </div>
+
 <div class="modal-footer">
     <button class="sc-button" ng-disabled="!newStream.name" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
     <button class="sc-button" ng-click="cancel()">Cancel</button>
