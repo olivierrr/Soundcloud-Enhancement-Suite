@@ -10,11 +10,13 @@ angular.module('SESApp')
                     $scope.streams = streams;
                 });
             })();
+$scope.dropped = function(dragEl, dropEl) {
+      // this is your application logic, do whatever makes sense
+      var drag = angular.element(dragEl);
+      var drop = angular.element(dropEl);
 
-            $scope.logIt = function() { console.log("Dragged");};
-
-            $scope.list1 = {title: 'Angular'};
-            $scope.list2 = {};
+      console.log("The element " + drag.attr('id') + " has been dropped on " + drop.attr("id") + "!");
+    };
             (function getFriendsList() {
                 Soundcloud.me()
                     .then(getList)

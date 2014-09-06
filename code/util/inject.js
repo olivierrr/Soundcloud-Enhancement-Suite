@@ -1,5 +1,4 @@
 var lastUrl;
-
 (function() {
 
     if (this.loopie) return;

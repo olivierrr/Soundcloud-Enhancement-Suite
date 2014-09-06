@@ -3,39 +3,32 @@
 </div>
 
 <div class="modal-body">
+<!--<div class="friends-search">Filter by Name
+        <input type="text" ng-model="filterBox">
+    </div> -->
+    <div class="friends-list-container">
+    <div class="friends-list-body">
+        <ul class="friends-list" ng-repeat="(letter, users) in friends">
+            <h1 ng-show="filtered.length" id="{{letter}}">{{letter}}</h1>
 
-
-    <!-- Example Drag-Drop -->
-    <div class="friends-list-container"><div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true, onStart: logIt()}" ng-hide="!list1.title">{{list1.title}}</div>
-
-    <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
-  <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
-</div>
-
-        <!--         <div class="friends-search">Filter by Name
-            <input type="text" ng-model="filterBox">
-        </div> -->
-
-        <div class="friends-list-body">
-            <ul class="friends-list" ng-repeat="(letter, users) in friends">
-                <h1 ng-show="filtered.length" id="{{letter}}">{{letter}}</h1>
-
-                <!-- Our Draggable Item -->
-                <li class="friends-item" ng-click="selectUser(user)" data-ng-repeat="user in (filtered = (users | filter: { username: filterBox }))" data-drag="true" jqyoui-draggable="{placeholder: 'keep', animate: true}">
-                        <img class="friends-item-image" src="{{user.avatar_url}}" alt="{{user.username}}'s' avatar">
-                        <h2 class="friends-item-name">{{user.username}}</h2>
-                    </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="streams-list-container">
-        <ul class="streams-list">
-            <li class="streams-list-item" data-ng-repeat="stream in streams">
-                <h2>{{stream.name}}</h2>
+            <!-- Draggable Items -->
+            <li class="friends-item" data-ng-repeat="user in (filtered = (users | filter: { username: filterBox }))" id="{{user.id}}" x-lvl-draggable="true">
+                <img class="friends-item-image" src="{{user.avatar_url}}" alt="{{user.username}}'s' avatar">
+                <h2 class="friends-item-name">{{user.username}}</h2>
             </li>
+
         </ul>
-    </div>
+    </div></div>
+
+<div class="streams-list-container">
+    <ul class="streams-list">
+
+        <!-- Droppable targets -->
+        <li class="streams-list-item" data-ng-repeat="stream in streams" id="{{stream.name}}" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
+            <h2>{{stream.name}}</h2>
+        </li>
+
+    </ul>
 </div>
 
 <div class="modal-footer">
@@ -84,11 +77,9 @@
     height: 100px;
     border: 1px dotted #ccc;
 }
-
 .friends-item:hover {
     cursor: pointer;
 }
-
 .friends-item-image {
     height: 50px;
     width: 50px;
@@ -110,4 +101,21 @@
     text-align: center;
     border: 1px solid #000;
 }
+
+/* Drag and Drop Effects */
+.lvl-over {
+    border: 2px dashed black !important;
+}
+.lvl-target {
+    background-color: #ddd;
+    opacity: .5;
+}
+[draggable] {
+    cursor: move;
+}
+
 </style>
+
+<script>
+jQuery.event.props.push('dataTransfer');
+</script>
