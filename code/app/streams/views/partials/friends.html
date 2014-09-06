@@ -1,17 +1,20 @@
 <div class="">
-    <div class="letters" style="display: inline-block;">
-        <ul class="g-tabs friends-letter-list" style="margin: 0 0 5px 0">
+    <div class="letters">
+        <ul class="g-tabs friends-letter-list">
             <li class="g-tabs-item networkTabs__following" data-ng-repeat="(letter, users) in friends">
                 <a href="#{{letter}" class="g-tabs-link" ng-click="setCurrentLetter(letter)">{{letter}}</a>
             </li>
         </ul>
     </div>
+
     <div class="friends-list-container">
+
         <div class="friends-search">Filter by Name
             <input type="text" ng-model="filterBox">
         </div>
+
         <div class="friends-list-body">
-            <ul class="" style="display: inline-block;" style="width:100%" ng-repeat="(letter, users) in friends">
+            <ul class="friends-list" ng-repeat="(letter, users) in friends">
                 <h1 ng-show="filtered.length" id="{{letter}}">{{letter}}</h1>
                 <li class="friends-item" ng-click="selectUser(user)"  data-ng-repeat="user in (filtered = (users | filter: { username: filterBox }))">
                     <div class="">
@@ -24,6 +27,7 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </div>
 
@@ -33,8 +37,14 @@
   display: inline-block;
 }
 
+.friends-list {
+    display: inline-block;
+    width:100%;
+}
+
 .friends-letter-list {
   display:inline-block;
+  margin: 0 0 5px 0;
 }
 
 .friends-letter-letter {
