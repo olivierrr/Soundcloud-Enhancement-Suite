@@ -1,38 +1,113 @@
 <div class="modal-header">
-    <ul class="g-tabs g-tabs-large">
-        <li class="g-tabs-item">
-            <a class="g-tabs-link addTab" ng-click="activateTab('add')">Add to stream</a>
-        </li>
-        <li class="g-tabs-item">
-            <a class="g-tabs-link createTab" ng-click="activateTab('create')">Create new</a>
-        </li>
-        <li class="g-tabs-item">
-            <a class="g-tabs-link editTab" ng-click="activateTab('edit')">Edit streams</a>
-        </li>
-    </ul>
+    <H3>Streams</H3>
 </div>
 
 <div class="modal-body">
-    <div class="addToStream" ng-show="activeTab == 'add'">
-        <span class="input__label">Stream to add:</span>
-        <input ng-model="newStream.name" id="textfield__input-title" type="text" value="" aria-required="false">
-    </div>
-    <div class="createStream" ng-show="activeTab == 'create'">
-        <span class="input-label">Stream Name:</span>
-        <input class="stream-name-input" ng-model="newStream.name" type="text" value="" aria-required="true">
-    </div>
-    <div class="editStream" ng-show="activeTab == 'edit'">
-        <div class="textfield messageOutside">
-            <span class="input__label">Stream to edit:</span>
+
+
+    <!-- Example Drag-Drop -->
+    <div class="friends-list-container"><div class="btn btn-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{animate:true, onStart: logIt()}" ng-hide="!list1.title">{{list1.title}}</div>
+
+    <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;'>
+  <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{list2.title}}</div>
+</div>
+
+        <!--         <div class="friends-search">Filter by Name
+            <input type="text" ng-model="filterBox">
+        </div> -->
+
+        <div class="friends-list-body">
+            <ul class="friends-list" ng-repeat="(letter, users) in friends">
+                <h1 ng-show="filtered.length" id="{{letter}}">{{letter}}</h1>
+
+                <!-- Our Draggable Item -->
+                <li class="friends-item" ng-click="selectUser(user)" data-ng-repeat="user in (filtered = (users | filter: { username: filterBox }))" data-drag="true" jqyoui-draggable="{placeholder: 'keep', animate: true}">
+                        <img class="friends-item-image" src="{{user.avatar_url}}" alt="{{user.username}}'s' avatar">
+                        <h2 class="friends-item-name">{{user.username}}</h2>
+                    </li>
+            </ul>
         </div>
-        <div>
-            <input class="textfield__input sc-input sc-input-full" id="textfield__input-title" type="text" value="" aria-required="false">
-        </div>
     </div>
-    <div friends-list></div>
+
+    <div class="streams-list-container">
+        <ul class="streams-list">
+            <li class="streams-list-item" data-ng-repeat="stream in streams">
+                <h2>{{stream.name}}</h2>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <div class="modal-footer">
-    <button class="sc-button" ng-disabled="!newStream.name" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
-    <button class="sc-button" ng-click="cancel()">Cancel</button>
+    <!--     <button class="sc-button" ng-disabled="!newStream.name" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
+    <button class="sc-button" ng-click="cancel()">Cancel</button> -->
 </div>
+
+
+<style>
+.letters {
+    display: inline-block;
+}
+.friends-list {
+    display: inline-block;
+    width: 100%;
+}
+.friends-letter-list {
+    display: inline-block;
+}
+.friends-letter-letter {
+    display: block;
+}
+.friends-list-container {
+    padding: 0;
+    display: inline-block;
+    width: 80%;
+    float: left;
+    box-sizing: border-box;
+}
+.friends-list-body {
+    height: 400px;
+    width: 100%;
+    overflow-y: auto;
+}
+.friends-search {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+}
+.friends-item {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 33%;
+    height: 100px;
+    border: 1px dotted #ccc;
+}
+
+.friends-item:hover {
+    cursor: pointer;
+}
+
+.friends-item-image {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
+.friends-item-name {
+    display: inline-block;
+    text-align: center;
+}
+.streams-list-container {
+    width: 20%;
+    float: right;
+}
+.streams-list {
+    list-style-type: none;
+}
+.streams-list-item {
+    height: 50px;
+    text-align: center;
+    border: 1px solid #000;
+}
+</style>

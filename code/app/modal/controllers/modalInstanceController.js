@@ -3,7 +3,7 @@ ModalInstanceCtrl = function($scope, $modalInstance, items) {
     $scope.items = items;
 
     $scope.selected = {
-        item: $scope.items[0];
+        item: $scope.items[0]
     };
 
     $scope.ok = function() {

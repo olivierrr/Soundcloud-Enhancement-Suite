@@ -40,6 +40,9 @@
     }, {
         "matches": ["https://soundcloud.com/stream"],
         "css": [
+            "lib/jquery-ui/jquery-ui.min.css",
+            "lib/jquery-ui/jquery-ui.structure.min.css",
+            "lib/jquery-ui/jquery-ui.theme.min.css",
             "assets/css/bootstrap.css",
             "assets/css/style.css"
         ],
@@ -47,8 +50,10 @@
 
             // vendor libraries
             "lib/IDBWrapper/idbstore.js",
-            "lib/jquery/jquery-1.11.1.min.js",
+            "lib/jquery-ui/external/jquery/jquery.js",
+            "lib/jquery-ui/jquery-ui.min.js",
             "lib/angular/angular.js",
+                        "lib/angular-dragdrop/angular-dragdrop.min.js",
             "lib/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js",
             "lib/waveform-js/waveform.js",
             "lib/waveform-parser/waveform-parser.js",

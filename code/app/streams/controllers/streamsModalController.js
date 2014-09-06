@@ -10,6 +10,11 @@ angular.module('SESApp')
                     $scope.streams = streams;
                 });
             })();
+
+            $scope.logIt = function() { console.log("Dragged");};
+
+            $scope.list1 = {title: 'Angular'};
+            $scope.list2 = {};
             (function getFriendsList() {
                 Soundcloud.me()
                     .then(getList)
