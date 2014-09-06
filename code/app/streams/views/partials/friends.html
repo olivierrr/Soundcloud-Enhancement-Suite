@@ -4,7 +4,6 @@
             <li class="g-tabs-item networkTabs__following" data-ng-repeat="(letter, users) in friends">
                 <a href="#{{letter}" class="g-tabs-link" ng-click="setCurrentLetter(letter)">{{letter}}</a>
             </li>
-
         </ul>
     </div>
     <div class="friends-list-container">
@@ -18,9 +17,8 @@
                     <div class="">
                         <img class="friends-item-image" src="{{user.avatar_url}}" alt="{{user.username}}'s' avatar">
                         <div class="friends-item-footer">
-                        <h2 class="friends-item-name">{{user.username}}
-                        </h2>
-                        <input ng-model="user.selected" class="friends-item-checkbox" type="checkbox">
+                            <h2 class="friends-item-name">{{user.username}}</h2>
+                            <input ng-model="user.selected" class="friends-item-checkbox" type="checkbox">
                         </div>
                     </div>
                 </li>
