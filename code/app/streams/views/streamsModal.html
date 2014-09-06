@@ -6,100 +6,123 @@
 <!--<div class="friends-search">Filter by Name
         <input type="text" ng-model="filterBox">
     </div> -->
+
     <div class="friends-list-container">
-    <div class="friends-list-body">
         <ul class="friends-list" ng-repeat="(letter, users) in friends">
+
             <h1 ng-show="filtered.length" id="{{letter}}">{{letter}}</h1>
 
             <!-- Draggable Items -->
             <li class="friends-item" data-ng-repeat="user in (filtered = (users | filter: { username: filterBox }))" id="{{user.id}}" x-lvl-draggable="true">
                 <img class="friends-item-image" src="{{user.avatar_url}}" alt="{{user.username}}'s' avatar">
-                <h2 class="friends-item-name">{{user.username}}</h2>
+                <span class="friends-item-name">{{user.username}}</span>
             </li>
 
         </ul>
-    </div></div>
+    </div>
 
-<div class="streams-list-container">
-    <ul class="streams-list">
+    <div class="streams-list-container">
+        <ul class="streams-list">
 
-        <!-- Droppable targets -->
-        <li class="streams-list-item" data-ng-repeat="stream in streams" id="{{stream.name}}" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
-            <h2>{{stream.name}}</h2>
-        </li>
+            <!-- Droppable targets -->
+            <li class="streams-list-item" data-ng-repeat="stream in streams" id="{{stream.name}}" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
+                <span class="stream-item-name">{{stream.name}}</span>
+            </li>
 
-    </ul>
+        </ul>
+    </div>
 </div>
 
-<div class="modal-footer">
-    <!--     <button class="sc-button" ng-disabled="!newStream.name" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
-    <button class="sc-button" ng-click="cancel()">Cancel</button> -->
-</div>
+<!-- <div class="modal-footer">
+        <button class="sc-button" ng-disabled="!newStream.name" ng-click="createNewStream(newStream)" ng-model="textfield_new_group">Create</button>
+    <button class="sc-button" ng-click="cancel()">Cancel</button>
+</div> -->
 
 
 <style>
-.letters {
-    display: inline-block;
+
+.modal-body {
+    overflow: auto;
 }
-.friends-list {
-    display: inline-block;
-    width: 100%;
-}
-.friends-letter-list {
-    display: inline-block;
-}
-.friends-letter-letter {
-    display: block;
-}
-.friends-list-container {
-    padding: 0;
-    display: inline-block;
-    width: 80%;
+
+/*
+    stream item
+*/
+.stream-list-container {
     float: left;
-    box-sizing: border-box;
+    width: 150px;
 }
-.friends-list-body {
-    height: 400px;
+.stream-list {
+    display: inline-block;
     width: 100%;
+}
+.streanm-list-item {
+    
+}
+.stream-item-name {
+
+}
+
+/*
+    friend item
+*/
+.friends-item {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+.friends-item-image {
+    float: left;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+.friends-item-name {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: none
+}
+.friends-item:hover .friends-item-name {
+    display: inline-block;
+    background-color: white;
+}
+
+/*
+    friend list container
+*/
+.friends-list-container {
+    float: right;
+    box-sizing: border-box;
+    height: 400px;
+    width: calc(100% - 150px);
     overflow-y: auto;
 }
+.friends-list {
+    margin: 0; /* reseting from bootstrap */
+    display: inline-block;
+    width: 100%;
+}
+
+.friends-letter-list {
+    display:inline-block;
+    margin: 0 0 5px 0;
+}
+
+.friends-letter-letter {
+    display:block;
+}
+
+
+
 .friends-search {
     position: relative;
     top: 0;
     left: 0;
     height: 20px;
     width: 100%;
-}
-.friends-item {
-    box-sizing: border-box;
-    display: inline-block;
-    width: 33%;
-    height: 100px;
-    border: 1px dotted #ccc;
-}
-.friends-item:hover {
-    cursor: pointer;
-}
-.friends-item-image {
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-}
-.friends-item-name {
-    display: inline-block;
-    text-align: center;
-}
-.streams-list-container {
-    width: 20%;
-    float: right;
-}
-.streams-list {
-    list-style-type: none;
-}
-.streams-list-item {
-    height: 50px;
-    text-align: center;
-    border: 1px solid #000;
 }
 
 /* Drag and Drop Effects */
